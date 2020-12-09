@@ -28,7 +28,7 @@ A post has a title. When a post is tapped, the user should be redirected to the 
 
 ### Post Detail
 
-For the post detail, we expect to see its author, description, number of comments and the comments.
+For the post detail, we expect to see its author, description, number of comments, and the comments.
 
 ### API
 
@@ -38,11 +38,11 @@ Here is the [API docs](http://jsonplaceholder.typicode.com), you should use the 
  - `/comments`
  - `/users`
 
-We expect from you to use the `GET` method only.
+We expect you to use the `GET` method only.
 
 ### Requirements
 
-- Use Swift 4.0 or above
+- Use Swift 5.1 or above
 - It should compile and run.
 - Provide a `COMMENTS.md` file mentioned in [Notes](#notes).
 
@@ -50,7 +50,7 @@ We expect from you to use the `GET` method only.
 
 You can send us a project you've done before. This project must follow the requirements below:
 
- - Swift 4.0 or above.
+ - Swift 5.1 or above.
  - Have at least three distinct network calls to a REST API.
  - Parse a JSON response and present the information to the user.
  - Have some sort of persistence mechanism.
@@ -67,7 +67,7 @@ You can send us a project you've done before. This project must follow the requi
 * Error scenarios should be taken into consideration and it should be easy to add them, even if you don't explicitly handle them.
 * Although UI and UX are important, we are more concerned in this demo with your thought process and with how you architect your application. Your demo should take into consideration features that might be added in the future.
 * You can use any third-party libraries you wish, but be prepared to justify why you did so (don't forget that we want to evaluate **YOUR** skills). If so, please use a dependency manager.
-* Keep in mind you're developing an app to be used over cellular data. Would be nice if you provide a way save the user's data plan.
+* Keep in mind you're developing an app to be used over cellular data. Would be nice if you provide a way to save the user's data plan.
 * **Be consistent in your code**. We advise using something like [GitHub's Swift style guide](https://github.com/github/swift-style-guide) while doing the demo. It's absolutely fine to use any other style, as long as you are consistent.
 * You must provide a `COMMENTS.md` file at the root of your repository, explaining:
     * Main architecture decisions you've made and a quick explanation of why.
