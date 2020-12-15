@@ -12,7 +12,7 @@ We need you to submit a demo project to be evaluated by our engineers. You can c
 
 The app architecture, project, code organization, file structure, and comments will be evaluated.
 
-Send your code challenge in a `.zip` file by e-mail to your recruiter.
+Send your code challenge in a `.zip` file or `url` of your git repo by e-mail to your recruiter.
 
 ## COYO Demo Project
 
@@ -65,6 +65,7 @@ You can send us a project you've done before. This project must follow the requi
 * Keep in mind the [SOLID principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) when doing the project.
 * Testing is very important for us. Even if you don't write a single test (for instance, because of time constraints), your app should be easy to test.
 * Error scenarios should be taken into consideration and it should be easy to add them, even if you don't explicitly handle them.
+* VIPER or MVVM architectures are preferred, but not mandatory.
 * Although UI and UX are important, we are more concerned in this demo with your thought process and with how you architect your application. Your demo should take into consideration features that might be added in the future.
 * You can use any third-party libraries you wish, but be prepared to justify why you did so (don't forget that we want to evaluate **YOUR** skills). If so, please use a dependency manager.
 * Keep in mind you're developing an app to be used over cellular data. Would be nice if you provide a way to save the user's data plan.
