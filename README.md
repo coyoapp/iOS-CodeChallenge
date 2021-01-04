@@ -24,7 +24,10 @@ We won't provide any UI specification, this is totally up to you. Free the desig
 
 ### Posts Screen
 
-A post has a title. When a post is tapped, the user should be redirected to the detail screen.
+ - A post has a title.
+ - When a post is tapped, the user should be redirected to the detail screen. 
+ - The user should be able to refresh the content.
+ - Our backend server is weak, 10 items per response should be enough to not melt it down.
 
 ### Post Detail
 
