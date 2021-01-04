@@ -42,7 +42,7 @@ We expect you to use the `GET` method only.
 
 ### Requirements
 
-- iOS 13+
+- Support iOS 13+
 - Use Swift 5.1 or above
 - It should compile and run.
 - Have some sort of persistence/cache mechanism.
@@ -52,7 +52,7 @@ We expect you to use the `GET` method only.
 
 You can send us a project you've done before. This project must follow the requirements below:
 
- - iOS 13+
+ - Support iOS 13+
  - Swift 5.1 or above.
  - Have at least three distinct network calls to a REST API.
  - Parse a JSON response and present the information to the user.
