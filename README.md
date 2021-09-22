@@ -46,7 +46,7 @@ We expect you to use the `GET` method only.
 ### Requirements
 
 - Support iOS 13+
-- Use Swift 5.1 or above
+- Use Swift 5.4 or above
 - It should compile and run.
 - Have some sort of persistence/cache mechanism.
 - Provide a `COMMENTS.md` file mentioned in [Notes](#notes).
@@ -56,7 +56,7 @@ We expect you to use the `GET` method only.
 You can send us a project you've done before. This project must follow the requirements below:
 
  - Support iOS 13+
- - Swift 5.1 or above.
+ - Swift 5.4 or above.
  - Have at least three distinct network calls to a REST API.
  - Parse a JSON response and present the information to the user.
  - Have some sort of persistence/cache mechanism.
