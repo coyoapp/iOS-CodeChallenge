@@ -1,22 +1,16 @@
 //
-//  miniPostTests.swift
+//  UserServiceSuccess.swift
 //  miniPostTests
 //
-//  Created by Robert Lang on 21/3/24.
+//  Created by Triet Le on 23.4.2024.
 //
 
 import XCTest
 @testable import miniPost
 
-final class miniPostTests: XCTestCase {
-    override func setUpWithError() throws {
-    }
-
-    override func tearDownWithError() throws {
-    }
-
-    func testUserHash() throws {
-        let user = User(
+struct UserServiceSuccess: UserServiceProtocol {
+    static let mock: Users = [
+        User(
             id: 1,
             name: "John Doe",
             username: "username",
@@ -35,6 +29,13 @@ final class miniPostTests: XCTestCase {
                 bs: "bs"
             )
         )
-        XCTAssertEqual(user.userHash(), "JoDo579test")
+    ]
+
+    func fetchAllUsers() async throws -> miniPost.Users {
+        return Self.mock
+    }
+
+    func fetchUserDetails(_ userId: String) async throws -> miniPost.User {
+        return Self.mock[0]
     }
 }

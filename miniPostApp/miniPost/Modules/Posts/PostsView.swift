@@ -8,57 +8,48 @@
 import SwiftUI
 
 struct PostsView: View {
-    @State private var posts: [Post] = []
+    @StateObject private var viewModel = PostsViewModel()
 
     var body: some View {
-        VStack {
-            if posts.isEmpty {
-                Text("Loading posts...")
+        ZStack(alignment: .center) {
+            if viewModel.isLoading {
+                ProgressView()
             } else {
-                List(posts, id: \.id) { post in
-                    VStack(alignment: .leading) {
-                        Text(post.title)
-                            .font(.headline)
-                        Text("By "+post.authorName)
-                            .font(.subheadline)
-                        Text(post.body)
-                            .font(.body)
+                List {
+                    ForEach(viewModel.uiModels) { post in
+                        postView(post)
                     }
                 }
             }
         }
-        .onAppear(perform: fetchPosts)
-    }
-
-    func fetchPosts() {
-
-        struct APIPost: Codable {
-            let id: Int
-            let title: String
-            let body: String
-            let userId: Int
+        .onAppear {
+            viewModel.onAppear()
         }
-
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode([APIPost].self, from: data) {
-                    DispatchQueue.main.async {
-                        self.posts = decodedResponse.map({ APIPost in
-                            var post = Post(id: APIPost.id, authorName: String(APIPost.userId), title: APIPost.title, body: APIPost.body)
-                            return post
-                        })
-                        for (index, post) in self.posts.enumerated() {
-                            Task {
-                                let userInfo = await getUser(id: post.authorName)
-                                self.posts[index].authorName = userInfo.name
-                            }
-                        }
-                    }
-                    return
-                }
+        .alert("Something went wrong", isPresented: $viewModel.showError) {
+            Button("Retry", role: .cancel) {
+                viewModel.retry()
             }
-            print("Fetch failed")
-        }.resume()
+        }
+        .navigationTitle("Posts")
     }
+
+    @ViewBuilder
+    private func postView(_ post: PostUIModel) -> some View {
+        VStack(alignment: .leading,  spacing: 8) {
+            Text(post.details.title)
+                .font(.title)
+                .fontWeight(.black)
+
+            Text("by \(post.author)")
+                .font(.title2)
+                .fontWeight(.semibold)
+
+            Text(post.details.body)
+                .font(.body)
+        }
+    }
+}
+
+#Preview {
+    PostsView()
 }

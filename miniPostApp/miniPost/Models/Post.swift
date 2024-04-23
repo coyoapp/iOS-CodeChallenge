@@ -7,9 +7,12 @@
 
 import Foundation
 
+// MARK: - Post
 struct Post: Codable {
     let id: Int
-    var authorName: String
+    let userId: Int
     let title: String
     let body: String
 }
+
+typealias Posts = [Post]
