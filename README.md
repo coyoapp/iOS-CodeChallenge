@@ -25,7 +25,7 @@ We're glad that you're considering a position here at Haiilo. Thank you for taki
 
 ### Deliverable
 * We need you to submit a PR with your proposed changes to make the app better.
-* Please add comments attached to the code on the PR explaining why you did certain things
+* Please also seend us an email with a short message explaining the reasoning of your changes.
 
 ### Notes
 * We like code that is simple, but [simple is different from easy](https://www.infoq.com/presentations/Simple-Made-Easy).
