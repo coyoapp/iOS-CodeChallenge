@@ -28,6 +28,8 @@ We're glad that you're considering a position here at Haiilo. Thank you for taki
 * Please also seend us an email with a short message explaining the reasoning of your changes.
 
 ### Notes
+* We recomend to dedicate no more than 2 coding sessions 1-2h each for the challenge
+* We also recomend to not be extensive trying to catch all the pitfalls. Instead focus on showing examples on different coding areas or a coding area you are passionate and expert.
 * We like code that is simple, but [simple is different from easy](https://www.infoq.com/presentations/Simple-Made-Easy).
 * Keep in mind the [SOLID principles](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)) when doing the project.
 * Testing is very important for us. Even if you don't write a single test (for instance, because of time constraints), your app should be easy to test.
