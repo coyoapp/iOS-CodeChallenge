@@ -169,13 +169,6 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		35D61BBB2BD7E36000648BED /* UserDetails */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserDetails;
-			sourceTree = "<group>";
-		};
 		35D61BBC2BD7E4AB00648BED /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,7 +259,6 @@
 				948652D02BAD9D9300D3B5E5 /* Posts */,
 				948652CF2BAD9D8100D3B5E5 /* Users */,
 				9435B3642BAC1D3200CF0C9E /* Profile */,
-				35D61BBB2BD7E36000648BED /* UserDetails */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
