@@ -35,6 +35,9 @@
 		E73DCB842BDA618C009B86B5 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DCB832BDA618C009B86B5 /* UserRepository.swift */; };
 		E73DCB862BDA61B4009B86B5 /* PostRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DCB852BDA61B4009B86B5 /* PostRepositoryProtocol.swift */; };
 		E73DCB882BDA61CC009B86B5 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DCB872BDA61CC009B86B5 /* PostRepository.swift */; };
+		E73DCB8A2BDA68B9009B86B5 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DCB892BDA68B9009B86B5 /* PostsViewModel.swift */; };
+		E73DCB8D2BDA6A6E009B86B5 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DCB8C2BDA6A6E009B86B5 /* DependencyInjector.swift */; };
+		E73DCB8F2BDA6AD2009B86B5 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DCB8E2BDA6AD2009B86B5 /* Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		E73DCB832BDA618C009B86B5 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		E73DCB852BDA61B4009B86B5 /* PostRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryProtocol.swift; sourceTree = "<group>"; };
 		E73DCB872BDA61CC009B86B5 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
+		E73DCB892BDA68B9009B86B5 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		E73DCB8C2BDA6A6E009B86B5 /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		E73DCB8E2BDA6AD2009B86B5 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 		9435B3372BAC1D0200CF0C9E /* miniPost */ = {
 			isa = PBXGroup;
 			children = (
+				E73DCB8B2BDA6A37009B86B5 /* DI */,
 				E73DCB802BDA6146009B86B5 /* Repositories */,
 				9435B36A2BAC1D3200CF0C9E /* API */,
 				9435B3622BAC1D3200CF0C9E /* Models */,
@@ -231,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				948652D12BAD9DCD00D3B5E5 /* PostsView.swift */,
+				E73DCB892BDA68B9009B86B5 /* PostsViewModel.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -244,6 +252,15 @@
 				E73DCB872BDA61CC009B86B5 /* PostRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E73DCB8B2BDA6A37009B86B5 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				E73DCB8C2BDA6A6E009B86B5 /* DependencyInjector.swift */,
+				E73DCB8E2BDA6AD2009B86B5 /* Dependencies.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +399,7 @@
 				948652D22BAD9DCD00D3B5E5 /* PostsView.swift in Sources */,
 				9435B36D2BAC1D3200CF0C9E /* ProfileRouter.swift in Sources */,
 				E73DCB722BDA59E3009B86B5 /* APIUrls.swift in Sources */,
+				E73DCB8D2BDA6A6E009B86B5 /* DependencyInjector.swift in Sources */,
 				E73DCB7E2BDA5E4C009B86B5 /* PostAPIHandler.swift in Sources */,
 				948652D42BAD9E3C00D3B5E5 /* Post.swift in Sources */,
 				9435B33B2BAC1D0200CF0C9E /* ContentView.swift in Sources */,
@@ -391,11 +409,13 @@
 				9435B3732BAC2C6C00CF0C9E /* usersListViewBridge.swift in Sources */,
 				948652CE2BAD68B200D3B5E5 /* ProfileFactory.swift in Sources */,
 				E73DCB742BDA5C1D009B86B5 /* UserAPIHandlerProtocol.swift in Sources */,
+				E73DCB8F2BDA6AD2009B86B5 /* Dependencies.swift in Sources */,
 				9435B36C2BAC1D3200CF0C9E /* ProfilePresenter.swift in Sources */,
 				E73DCB7C2BDA5D0C009B86B5 /* User.swift in Sources */,
 				E73DCB822BDA616C009B86B5 /* UserRepositoryProtocol.swift in Sources */,
 				E73DCB842BDA618C009B86B5 /* UserRepository.swift in Sources */,
 				9435B3392BAC1D0200CF0C9E /* miniPostApp.swift in Sources */,
+				E73DCB8A2BDA68B9009B86B5 /* PostsViewModel.swift in Sources */,
 				9435B36F2BAC1D3200CF0C9E /* ProfileEntity.swift in Sources */,
 				E73DCB782BDA5C84009B86B5 /* APIPost.swift in Sources */,
 				E73DCB862BDA61B4009B86B5 /* PostRepositoryProtocol.swift in Sources */,
