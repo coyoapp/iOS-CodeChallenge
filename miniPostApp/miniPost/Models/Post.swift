@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post: Codable {
+struct Post: Codable, Equatable {
     let id: Int
     var authorName: String
     let title: String

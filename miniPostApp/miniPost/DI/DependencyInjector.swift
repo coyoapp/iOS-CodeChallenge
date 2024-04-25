@@ -25,7 +25,7 @@ final class DependencyInjector {
 }
 
 @propertyWrapper struct Inject<T> {
-    var  wrappedValue: T
+    var wrappedValue: T
     
     init() {
         self.wrappedValue = DependencyInjector.resolve()
@@ -33,7 +33,7 @@ final class DependencyInjector {
 }
 
 @propertyWrapper struct Provider<T> {
-    var  wrappedValue: T
+    var wrappedValue: T
     
     init(wrappedValue: T) {
         self.wrappedValue = wrappedValue
