@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol PostRepositoryProtocol {
-    func getPosts() -> AnyPublisher<[APIPost], Error>
+    func getPosts() -> AnyPublisher<[Post], Error>
 }

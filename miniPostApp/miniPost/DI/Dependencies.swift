@@ -13,6 +13,6 @@ final class Dependencies {
         @Provider var postAPI = PostAPIHandler() as PostAPIHandlerProtocol
         
         @Provider var userRepository = UserRepository(userAPI: userAPI) as UserRepositoryProtocol
-        @Provider var postRepository = PostRepository(postAPI: postAPI) as PostRepositoryProtocol
+        @Provider var postRepository = PostRepository(postAPI: postAPI, userAPI: userAPI) as PostRepositoryProtocol
     }
 }
