@@ -18,7 +18,7 @@ struct MainMenuView: View {
         switch item.name {
         case "Posts": return AnyView(PostsView())
         case "Users": return AnyView(UsersListView())
-        case "Profile": return AnyView(AppModules.modules.profileModule?.getView())
+        case "Profile": return AnyView(ProfileView())
         default: return AnyView(PostsView())
         }
     }
@@ -39,25 +39,6 @@ struct MainMenuView: View {
             }
             .navigationTitle("Main Menu")
         }
-    }
-}
-
-struct DetailView: View {
-    let item: MainMenuItem
-
-    var body: some View {
-        VStack {
-            Text(item.name)
-                .font(.title)
-            Spacer()
-        }
-        .navigationTitle(item.name)
-    }
-}
-
-struct UsersListView: View {
-    var body: some View {
-        MyUIKitView()
     }
 }
 

@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct PostsView: View {
-    @State private var posts: [Post] = []
-
+    @ObservedObject private var postViewModel = PostsViewModel()
+    
     var body: some View {
         VStack {
-            if posts.isEmpty {
+            if postViewModel.posts.isEmpty {
                 Text("Loading posts...")
             } else {
-                List(posts, id: \.id) { post in
+                List(postViewModel.posts, id: \.id) { post in
                     VStack(alignment: .leading) {
                         Text(post.title)
                             .font(.headline)
@@ -27,38 +27,6 @@ struct PostsView: View {
                 }
             }
         }
-        .onAppear(perform: fetchPosts)
-    }
-
-    func fetchPosts() {
-
-        struct APIPost: Codable {
-            let id: Int
-            let title: String
-            let body: String
-            let userId: Int
-        }
-
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode([APIPost].self, from: data) {
-                    DispatchQueue.main.async {
-                        self.posts = decodedResponse.map({ APIPost in
-                            var post = Post(id: APIPost.id, authorName: String(APIPost.userId), title: APIPost.title, body: APIPost.body)
-                            return post
-                        })
-                        for (index, post) in self.posts.enumerated() {
-                            Task {
-                                let userInfo = await getUser(id: post.authorName)
-                                self.posts[index].authorName = userInfo.name
-                            }
-                        }
-                    }
-                    return
-                }
-            }
-            print("Fetch failed")
-        }.resume()
+        .onAppear(perform: postViewModel.getPosts)
     }
 }

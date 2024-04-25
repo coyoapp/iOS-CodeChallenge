@@ -1,5 +1,5 @@
 //
-//  usersListViewBridge.swift
+//  UsersListViewBridge.swift
 //  miniPost
 //
 //  Created by Robert Lang on 21/3/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-struct MyUIKitView: UIViewControllerRepresentable {
+struct UsersListViewBridge: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = UIViewController
 
