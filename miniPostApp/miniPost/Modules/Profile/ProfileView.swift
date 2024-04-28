@@ -1,6 +1,6 @@
 import SwiftUI
 
-protocol ProfileViewProtocol: class {
+protocol ProfileViewProtocol: AnyObject {
     func updateInfo(_ info: User)
     func getView() -> ProfileView
 }

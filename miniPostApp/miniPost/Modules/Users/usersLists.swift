@@ -41,17 +41,21 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
         view.addSubview(loadingView)
 
         self.onDataLoaded = {
-            self.collectionView.reloadData()
-            loadingView.isHidden = true
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                loadingView.isHidden = true
+            }
         }
     }
 
     func mapUsers(users: [User]) {
-        for (index, user) in users.enumerated() {
+        for (_, user) in users.enumerated() {
             let viewUser = viewUser(id: user.id, name: user.name)
             data.append(viewUser)
         }
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
         onDataLoaded!()
     }
 

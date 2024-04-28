@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-protocol ProfilePresenterProtocol: class {
+protocol ProfilePresenterProtocol: AnyObject {
     var view: ProfileViewProtocol! { get set }
     var interactor: ProfileInteractorProtocol! { get set }
 

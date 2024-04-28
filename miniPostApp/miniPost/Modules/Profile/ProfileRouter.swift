@@ -1,6 +1,6 @@
 import UIKit
 
-protocol ProfileRouterProtocol: class {
+protocol ProfileRouterProtocol: AnyObject {
     func fetchInfo()
 }
 
