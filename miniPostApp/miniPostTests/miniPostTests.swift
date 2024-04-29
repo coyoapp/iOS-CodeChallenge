@@ -17,7 +17,7 @@ final class miniPostTests: XCTestCase {
     }
 
     func testUserHash() throws {
-        let hash = calculateUserHash(name: "John Doe", phone: "123-456", website: "test.local")
+        let hash = Translator.calculateUserHash(name: "John Doe", phone: "123-456", website: "test.local")
         XCTAssertEqual(hash, "JoDo579test")
     }
 

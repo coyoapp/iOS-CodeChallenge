@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Post: Codable {
+struct Post {
     let id: Int
-    var authorName: String
+    let authorName: String
     let title: String
     let body: String
 }

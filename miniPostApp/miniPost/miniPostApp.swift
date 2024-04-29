@@ -7,27 +7,13 @@
 
 import SwiftUI
 
-class AppModules {
-    static let modules = AppModules()
-
-    public var profileModule: ProfilePresenter?
-    public var modulesLoaded: Bool = false
-
-     init() {
-         profileModule = createProfileModule()
-         modulesLoaded = true
-    }
-}
-
 @main
 struct miniPostApp: App {
+    private let appServices = AppServices(postService: PostServiceImpl(), userService: UserServiceImpl())
+
     var body: some Scene {
         WindowGroup {
-            if AppModules.modules.modulesLoaded {
-                MainMenuView()
-            } else {
-                Text("Loading...")
-            }
-        }
+            MainMenuView(viewModel: MainMenuViewModel(appServices: appServices))
+         }
     }
 }
