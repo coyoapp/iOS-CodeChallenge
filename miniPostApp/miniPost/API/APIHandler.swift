@@ -7,9 +7,10 @@
 
 import Foundation
 
-let apiUrl = "https://jsonplaceholder.typicode.com/"
-let session = URLSession.shared
-
+enum Const {
+    static let apiUrl = "https://jsonplaceholder.typicode.com"
+    static let session = URLSession.shared
+}
 
 struct User: Codable {
     let id: Int
@@ -19,25 +20,25 @@ struct User: Codable {
 }
 
 func performUsersListAPICall(endpointUrl: String) async throws -> [User] {
-    let (data, _) = try await URLSession.shared.data(from: URL(string: apiUrl + "/users")!)
+    let (data, _) = try await URLSession.shared.data(from: URL(string: Const.apiUrl + "/users")!)
     let userList = try JSONDecoder().decode([User].self, from: data)
     return userList
 }
 
 func performUserDetailAPICall(endpointUrl: String, id: String) async throws -> User {
-    let (data, _) = try await URLSession.shared.data(from: URL(string: apiUrl + "/users/" + id)!)
+    let (data, _) = try await URLSession.shared.data(from: URL(string: Const.apiUrl + "/users/" + id)!)
     let userList = try JSONDecoder().decode(User.self, from: data)
     return userList
 }
 
 func getUsers(callback: @escaping ([User]) -> Void) {
-    Task {
-        let result = try await performUsersListAPICall(endpointUrl: "users")
+    Task(priority: .utility) {
+        let result = try await performUsersListAPICall(endpointUrl: "/users")
         callback(result)
     }
 }
 
 func getUser(id: String) async -> User {
-    return try! await performUserDetailAPICall(endpointUrl: "user/", id: id)
+    return try! await performUserDetailAPICall(endpointUrl: "/user/", id: id)
 }
 

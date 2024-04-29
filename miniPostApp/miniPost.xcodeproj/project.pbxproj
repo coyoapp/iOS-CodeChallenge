@@ -19,8 +19,8 @@
 		9435B36D2BAC1D3200CF0C9E /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3672BAC1D3200CF0C9E /* ProfileRouter.swift */; };
 		9435B36E2BAC1D3200CF0C9E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3682BAC1D3200CF0C9E /* ProfileView.swift */; };
 		9435B36F2BAC1D3200CF0C9E /* ProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3692BAC1D3200CF0C9E /* ProfileEntity.swift */; };
-		9435B3712BAC2A6300CF0C9E /* usersLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3702BAC2A6300CF0C9E /* usersLists.swift */; };
-		9435B3732BAC2C6C00CF0C9E /* usersListViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3722BAC2C6C00CF0C9E /* usersListViewBridge.swift */; };
+		9435B3712BAC2A6300CF0C9E /* UsersLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3702BAC2A6300CF0C9E /* UsersLists.swift */; };
+		9435B3732BAC2C6C00CF0C9E /* UsersListViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3722BAC2C6C00CF0C9E /* UsersListViewBridge.swift */; };
 		948652CE2BAD68B200D3B5E5 /* ProfileFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948652CD2BAD68B200D3B5E5 /* ProfileFactory.swift */; };
 		948652D22BAD9DCD00D3B5E5 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948652D12BAD9DCD00D3B5E5 /* PostsView.swift */; };
 		948652D42BAD9E3C00D3B5E5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948652D32BAD9E3C00D3B5E5 /* Post.swift */; };
@@ -60,8 +60,8 @@
 		9435B3672BAC1D3200CF0C9E /* ProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		9435B3682BAC1D3200CF0C9E /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9435B3692BAC1D3200CF0C9E /* ProfileEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEntity.swift; sourceTree = "<group>"; };
-		9435B3702BAC2A6300CF0C9E /* usersLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usersLists.swift; sourceTree = "<group>"; };
-		9435B3722BAC2C6C00CF0C9E /* usersListViewBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usersListViewBridge.swift; sourceTree = "<group>"; };
+		9435B3702BAC2A6300CF0C9E /* UsersLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLists.swift; sourceTree = "<group>"; };
+		9435B3722BAC2C6C00CF0C9E /* UsersListViewBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewBridge.swift; sourceTree = "<group>"; };
 		948652CD2BAD68B200D3B5E5 /* ProfileFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFactory.swift; sourceTree = "<group>"; };
 		948652D12BAD9DCD00D3B5E5 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		948652D32BAD9E3C00D3B5E5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -194,8 +194,8 @@
 		948652CF2BAD9D8100D3B5E5 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				9435B3702BAC2A6300CF0C9E /* usersLists.swift */,
-				9435B3722BAC2C6C00CF0C9E /* usersListViewBridge.swift */,
+				9435B3702BAC2A6300CF0C9E /* UsersLists.swift */,
+				9435B3722BAC2C6C00CF0C9E /* UsersListViewBridge.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -344,8 +344,8 @@
 				9435B36D2BAC1D3200CF0C9E /* ProfileRouter.swift in Sources */,
 				948652D42BAD9E3C00D3B5E5 /* Post.swift in Sources */,
 				9435B33B2BAC1D0200CF0C9E /* ContentView.swift in Sources */,
-				9435B3712BAC2A6300CF0C9E /* usersLists.swift in Sources */,
-				9435B3732BAC2C6C00CF0C9E /* usersListViewBridge.swift in Sources */,
+				9435B3712BAC2A6300CF0C9E /* UsersLists.swift in Sources */,
+				9435B3732BAC2C6C00CF0C9E /* UsersListViewBridge.swift in Sources */,
 				948652CE2BAD68B200D3B5E5 /* ProfileFactory.swift in Sources */,
 				9435B36C2BAC1D3200CF0C9E /* ProfilePresenter.swift in Sources */,
 				94C5DF602BAC64F300D2510C /* APIHandler.swift in Sources */,
@@ -514,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"miniPost/Preview Content\"";
-				DEVELOPMENT_TEAM = 5YRV943L98;
+				DEVELOPMENT_TEAM = 62236UQ8QC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -527,7 +527,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = demoapp.miniPost;
+				PRODUCT_BUNDLE_IDENTIFIER = "demoapp.miniPost-ds";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -543,7 +543,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"miniPost/Preview Content\"";
-				DEVELOPMENT_TEAM = 5YRV943L98;
+				DEVELOPMENT_TEAM = 62236UQ8QC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -556,7 +556,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = demoapp.miniPost;
+				PRODUCT_BUNDLE_IDENTIFIER = "demoapp.miniPost-ds";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

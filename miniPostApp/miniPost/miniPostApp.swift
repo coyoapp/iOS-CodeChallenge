@@ -8,7 +8,6 @@
 import SwiftUI
 
 class AppModules {
-
     static let modules = AppModules()
 
     public var profileModule: ProfilePresenter?

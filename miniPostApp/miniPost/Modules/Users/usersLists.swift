@@ -1,5 +1,5 @@
 //
-//  usersLists.swift
+//  UsersLists.swift
 //  miniPost
 //
 //  Created by Robert Lang on 21/3/24.
@@ -22,9 +22,9 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
         return cv
     }()
 
-    var onDataLoaded: (()->Void)?
+    var onDataLoaded: (() -> Void)?
 
-    func setOnDataLoaded(onDataLoadedHandler: @escaping ()->Void) {
+    func setOnDataLoaded(onDataLoadedHandler: @escaping () -> Void) {
         onDataLoaded = onDataLoadedHandler
     }
 
@@ -40,15 +40,19 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
         let loadingView = loadingView()
         view.addSubview(loadingView)
 
-        self.onDataLoaded = {
-            self.collectionView.reloadData()
+        onDataLoaded = { [weak self] in
+            self?.collectionView.reloadData()
             loadingView.isHidden = true
         }
     }
 
+    deinit {
+        print("user list deinited")
+    }
+
     func mapUsers(users: [User]) {
-        for (index, user) in users.enumerated() {
-            let viewUser = viewUser(id: user.id, name: user.name)
+        users.forEach {
+            let viewUser = viewUser(id: $0.id, name: $0.name)
             data.append(viewUser)
         }
         collectionView.reloadData()
@@ -56,7 +60,11 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
 
     func fetchData() {
-        getUsers(callback: mapUsers)
+        getUsers() { users in
+            DispatchQueue.main.async {
+                self.mapUsers(users: users)
+            }
+        }
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {

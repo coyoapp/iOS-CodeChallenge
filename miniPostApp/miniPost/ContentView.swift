@@ -7,7 +7,6 @@ struct MainMenuItem: Identifiable {
 }
 
 struct MainMenuView: View {
-
     let items: [MainMenuItem] = [
         MainMenuItem(name: "Posts", image: "message"),
         MainMenuItem(name: "Users", image: "person.3"),
@@ -16,17 +15,20 @@ struct MainMenuView: View {
 
     func getDestinationView(_ item: MainMenuItem) -> some View {
         switch item.name {
-        case "Posts": return AnyView(PostsView())
-        case "Users": return AnyView(UsersListView())
-        case "Profile": return AnyView(AppModules.modules.profileModule?.getView())
-        default: return AnyView(PostsView())
+        case "Posts": 
+            return AnyView(PostsView())
+        case "Users":
+            return AnyView(UsersListView())
+        case "Profile":
+            return AnyView(AppModules.modules.profileModule?.getView())
+        default:
+            return AnyView(PostsView())
         }
     }
 
     var body: some View {
         NavigationView {
             List(items) { mainMenuItem in
-                
                 NavigationLink(destination: getDestinationView(mainMenuItem)) {
                     HStack {
                         Image(systemName: mainMenuItem.image)
@@ -34,6 +36,7 @@ struct MainMenuView: View {
                         Text(mainMenuItem.name)
                             .font(.title)
                             .padding()
+                        Spacer()
                     }
                 }
             }

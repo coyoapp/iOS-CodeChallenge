@@ -31,7 +31,6 @@ struct PostsView: View {
     }
 
     func fetchPosts() {
-
         struct APIPost: Codable {
             let id: Int
             let title: String
@@ -39,13 +38,13 @@ struct PostsView: View {
             let userId: Int
         }
 
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+        let url = URL(string: Const.apiUrl + "/posts")!
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode([APIPost].self, from: data) {
                     DispatchQueue.main.async {
                         self.posts = decodedResponse.map({ APIPost in
-                            var post = Post(id: APIPost.id, authorName: String(APIPost.userId), title: APIPost.title, body: APIPost.body)
+                            let post = Post(id: APIPost.id, authorName: String(APIPost.userId), title: APIPost.title, body: APIPost.body)
                             return post
                         })
                         for (index, post) in self.posts.enumerated() {
