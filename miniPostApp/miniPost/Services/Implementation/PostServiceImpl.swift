@@ -8,8 +8,12 @@
 import Foundation
 
 final class PostServiceImpl: PostService {
-    private let session = URLSession.shared
+    private let session: URLSession
     private let jsonDecoder = JSONDecoder()
+
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
 
     func fetchPostList() async throws -> [PostRemote] {
         let url = Const.apiUrl.appendingPathComponent("posts")

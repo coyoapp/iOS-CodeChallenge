@@ -30,8 +30,8 @@ struct MainMenuView: View {
     MainMenuView(
         viewModel: MainMenuViewModel(
             appServices: AppServices(
-                postService: PostServiceImpl(),
-                userService: UserServiceImpl()
+                postService: PostServiceMock()!,
+                userService: UserServiceMock()!
             )
         )
     )

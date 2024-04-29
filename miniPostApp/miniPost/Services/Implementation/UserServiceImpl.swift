@@ -8,8 +8,12 @@
 import Foundation
 
 final class UserServiceImpl: UserService {
-    private let session = URLSession.shared
+    private let session: URLSession
     private let jsonDecoder = JSONDecoder()
+
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
 
     func fetchUserList() async throws -> [UserRemote] {
         let url = Const.apiUrl.appendingPathComponent("users")

@@ -9,7 +9,10 @@ import SwiftUI
 
 @main
 struct miniPostApp: App {
-    private let appServices = AppServices(postService: PostServiceImpl(), userService: UserServiceImpl())
+    private let appServices = AppServices(
+        postService: PostServiceImpl(),
+        userService: UserServiceImpl()
+    )
 
     var body: some Scene {
         WindowGroup {

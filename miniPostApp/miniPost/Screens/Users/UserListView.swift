@@ -38,5 +38,9 @@ struct UserListView: View {
 }
 
 #Preview {
-    UserListView(viewModel: UserListViewModel(userService: UserServiceImpl()))
+    UserListView(
+        viewModel: UserListViewModel(
+            userService: UserServiceMock()!
+        )
+    )
 }

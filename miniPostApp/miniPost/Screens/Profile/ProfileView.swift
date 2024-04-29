@@ -31,7 +31,7 @@ struct ProfileView: View {
 #Preview {
     ProfileView(
         viewModel: ProfileViewModel(
-            userService: UserServiceImpl()
+            userService: UserServiceMock()!
         )
     )
 }

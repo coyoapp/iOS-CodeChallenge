@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import miniPost
 
 final class miniPostTests: XCTestCase {
@@ -20,5 +21,4 @@ final class miniPostTests: XCTestCase {
         let hash = Translator.calculateUserHash(name: "John Doe", phone: "123-456", website: "test.local")
         XCTAssertEqual(hash, "JoDo579test")
     }
-
 }

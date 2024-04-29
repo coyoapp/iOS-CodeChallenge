@@ -36,8 +36,8 @@ struct PostView: View {
 #Preview {
     PostView(
         viewModel: PostViewModel(
-            postService: PostServiceImpl(),
-            userService: UserServiceImpl()
+            postService: PostServiceMock()!,
+            userService: UserServiceMock()!
         )
     )
 }
