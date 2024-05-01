@@ -7,19 +7,16 @@ final class PostsViewModel: ObservableObject {
     @Published var postList: [PostList] = []
     private var cancellables = Set<AnyCancellable>()
 
-    private let postsService: NetworkProtocol
-    private let userListService: NetworkProtocol
+    private let service: NetworkProtocol
 
     
-    init(postsService: NetworkProtocol, userListService: NetworkProtocol) {
-        self.postsService = postsService
-        self.userListService = userListService
+    init(service: NetworkProtocol) {
+        self.service = service
         fetchPosts()
-        fetchUserList()
     }
     
     func fetchPosts() {
-        postsService.fetchPostsService().sink { completion in
+        service.fetchPostsService().sink { completion in
             switch completion {
             case .failure(let error):
                 print("Error fetching posts:", error.localizedDescription)
@@ -28,12 +25,13 @@ final class PostsViewModel: ObservableObject {
             }
         } receiveValue: { [weak self] result in
             self?.posts = result
+            self?.fetchUserList()
         }
         .store(in: &cancellables)
     }
     
     func fetchUserList() {
-        userListService.fetchUsersListService().sink { completion in
+        service.fetchUsersListService().sink { completion in
             switch completion {
             case .failure(let error):
                 print("Error fetching posts:", error.localizedDescription)
