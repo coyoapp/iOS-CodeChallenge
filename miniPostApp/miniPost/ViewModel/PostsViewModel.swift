@@ -25,12 +25,12 @@ final class PostsViewModel: ObservableObject {
             }
         } receiveValue: { [weak self] result in
             self?.posts = result
-            self?.fetchUserList()
+            self?.fetchPostList()
         }
         .store(in: &cancellables)
     }
     
-    func fetchUserList() {
+    func fetchPostList() {
         service.fetchUsersListService().sink { completion in
             switch completion {
             case .failure(let error):
