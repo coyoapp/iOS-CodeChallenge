@@ -276,8 +276,7 @@
 		20E543402BE97F0E00CD7E52 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				20E543412BE97F1F00CD7E52 /* PostsRepository.swift */,
-				20E5434F2BE98D2100CD7E52 /* PostsRepositoryFactory.swift */,
+				20E543512BE98F9600CD7E52 /* Posts */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -304,6 +303,15 @@
 				948652D12BAD9DCD00D3B5E5 /* PostsView.swift */,
 				20E5434B2BE989C300CD7E52 /* PostsViewModel.swift */,
 				20E5434D2BE98C9200CD7E52 /* PostsViewFactory.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		20E543512BE98F9600CD7E52 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				20E543412BE97F1F00CD7E52 /* PostsRepository.swift */,
+				20E5434F2BE98D2100CD7E52 /* PostsRepositoryFactory.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
