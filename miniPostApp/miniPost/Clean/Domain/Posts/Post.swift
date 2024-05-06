@@ -7,11 +7,9 @@
 
 import Foundation
 
-// TODO: This is treated as the Domain object
-
 struct Post {
     let id: Int
-    var authorName: String
+    let authorName: String
     let title: String
     let body: String
 }

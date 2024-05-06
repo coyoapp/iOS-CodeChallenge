@@ -28,10 +28,10 @@ struct MainMenuView: View {
     
     private func getDestinationView(_ item: MainMenuItem) -> some View {
         switch item.name {
-        case "Posts": AnyView(PostsView())
+        case "Posts": AnyView(PostsViewFactory.make())
         case "Users": AnyView(UsersListView())
         case "Profile": AnyView(AppModules.modules.profileModule?.getView())
-        default: AnyView(PostsView())
+        default: AnyView(PostsViewFactory.make())
         }
     }
 }
