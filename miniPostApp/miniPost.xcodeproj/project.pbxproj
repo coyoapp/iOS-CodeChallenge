@@ -16,6 +16,9 @@
 		20E5432F2BE9734100CD7E52 /* UsersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5432E2BE9734100CD7E52 /* UsersDataSource.swift */; };
 		20E543322BE97AD700CD7E52 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543312BE97AD700CD7E52 /* UserRequest.swift */; };
 		20E543342BE97B3D00CD7E52 /* UsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543332BE97B3D00CD7E52 /* UsersRequest.swift */; };
+		20E543382BE97D7600CD7E52 /* PostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543372BE97D7600CD7E52 /* PostDTO.swift */; };
+		20E5433B2BE97DCC00CD7E52 /* PostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5433A2BE97DCC00CD7E52 /* PostsRequest.swift */; };
+		20E5433D2BE97E0400CD7E52 /* PostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5433C2BE97E0400CD7E52 /* PostsDataSource.swift */; };
 		9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */; };
 		9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */; };
 		9435B33D2BAC1D0400CF0C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435B33C2BAC1D0400CF0C9E /* Assets.xcassets */; };
@@ -63,6 +66,9 @@
 		20E5432E2BE9734100CD7E52 /* UsersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataSource.swift; sourceTree = "<group>"; };
 		20E543312BE97AD700CD7E52 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		20E543332BE97B3D00CD7E52 /* UsersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequest.swift; sourceTree = "<group>"; };
+		20E543372BE97D7600CD7E52 /* PostDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTO.swift; sourceTree = "<group>"; };
+		20E5433A2BE97DCC00CD7E52 /* PostsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRequest.swift; sourceTree = "<group>"; };
+		20E5433C2BE97E0400CD7E52 /* PostsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDataSource.swift; sourceTree = "<group>"; };
 		9435B3352BAC1D0200CF0C9E /* miniPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPostApp.swift; sourceTree = "<group>"; };
 		9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 		20E543242BE971D100CD7E52 /* REST */ = {
 			isa = PBXGroup;
 			children = (
+				20E543352BE97D5A00CD7E52 /* Posts */,
 				20E5432D2BE9733300CD7E52 /* Users */,
 				20E543262BE971F700CD7E52 /* Networking */,
 			);
@@ -203,6 +210,32 @@
 			children = (
 				20E543312BE97AD700CD7E52 /* UserRequest.swift */,
 				20E543332BE97B3D00CD7E52 /* UsersRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		20E543352BE97D5A00CD7E52 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				20E543362BE97D6700CD7E52 /* DTOs */,
+				20E543392BE97DA800CD7E52 /* Requests */,
+				20E5433C2BE97E0400CD7E52 /* PostsDataSource.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		20E543362BE97D6700CD7E52 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				20E543372BE97D7600CD7E52 /* PostDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		20E543392BE97DA800CD7E52 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				20E5433A2BE97DCC00CD7E52 /* PostsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -460,6 +493,7 @@
 				9435B36D2BAC1D3200CF0C9E /* ProfileRouter.swift in Sources */,
 				20E5432F2BE9734100CD7E52 /* UsersDataSource.swift in Sources */,
 				948652D42BAD9E3C00D3B5E5 /* Post.swift in Sources */,
+				20E5433B2BE97DCC00CD7E52 /* PostsRequest.swift in Sources */,
 				20E5432A2BE9724000CD7E52 /* NetworkClient.swift in Sources */,
 				9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */,
 				9435B3712BAC2A6300CF0C9E /* UsersListViewController.swift in Sources */,
@@ -469,7 +503,9 @@
 				9435B36C2BAC1D3200CF0C9E /* ProfilePresenter.swift in Sources */,
 				94C5DF602BAC64F300D2510C /* APIHandler.swift in Sources */,
 				9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */,
+				20E5433D2BE97E0400CD7E52 /* PostsDataSource.swift in Sources */,
 				9435B36F2BAC1D3200CF0C9E /* ProfileEntity.swift in Sources */,
+				20E543382BE97D7600CD7E52 /* PostDTO.swift in Sources */,
 				20E5431E2BE95FEA00CD7E52 /* MainMenuItem.swift in Sources */,
 				20E543212BE9614900CD7E52 /* UserDTO.swift in Sources */,
 				20E543192BE95E3A00CD7E52 /* UsersListView.swift in Sources */,

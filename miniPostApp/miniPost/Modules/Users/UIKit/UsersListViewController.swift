@@ -7,7 +7,7 @@
 
 import UIKit
 
-// TODO: After an initial review of this class, is easier to migrate it to SwiftUI
+// TODO: After an initial review of this class, it's easier to migrate it to SwiftUI
 
 class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     struct UserDisplay {
