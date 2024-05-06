@@ -7,8 +7,7 @@
 
 import Foundation
 
-// TODO: Consider replacing Codable by Decodable only
-struct UserDTO: Codable {
+struct UserDTO: Decodable {
     let id: Int
     let name: String
     let phone: String

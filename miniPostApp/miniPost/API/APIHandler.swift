@@ -7,27 +7,24 @@
 
 import Foundation
 
-// TODO: Remove this file and create a proper NetworkClient
-// Resolve all forced unwrap cases, and handle errors properly
-
 private let apiUrl = "https://jsonplaceholder.typicode.com/"
 private let session = URLSession.shared
 
+// TODO: Remove when unused
 
-
-func performUsersListAPICall(endpointUrl: String) async throws -> [UserDTO] {
+private func performUsersListAPICall(endpointUrl: String) async throws -> [UserDTO] {
     let (data, _) = try await URLSession.shared.data(from: URL(string: apiUrl + "/users")!)
     let userList = try JSONDecoder().decode([UserDTO].self, from: data)
     return userList
 }
 
-func performUserDetailAPICall(endpointUrl: String, id: String) async throws -> UserDTO {
+private func performUserDetailAPICall(endpointUrl: String, id: String) async throws -> UserDTO {
     let (data, _) = try await URLSession.shared.data(from: URL(string: apiUrl + "/users/" + id)!)
     let userList = try JSONDecoder().decode(UserDTO.self, from: data)
     return userList
 }
 
-// TODO: Check what to return if the request fails
+@available(*, deprecated, message: "Use UsersDataSource instead")
 func getUsers() async -> [UserDTO] {
     do {
         return try await performUsersListAPICall(endpointUrl: "users")
@@ -36,6 +33,7 @@ func getUsers() async -> [UserDTO] {
     }
 }
 
+@available(*, deprecated, message: "Use UsersDataSource instead")
 func getUser(id: String) async -> UserDTO {
     return try! await performUserDetailAPICall(endpointUrl: "user/", id: id)
 }
