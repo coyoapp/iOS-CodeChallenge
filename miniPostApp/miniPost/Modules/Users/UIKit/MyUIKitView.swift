@@ -9,9 +9,6 @@ import SwiftUI
 import UIKit
 
 struct MyUIKitView: UIViewControllerRepresentable {
-    
-    typealias UIViewControllerType = UIViewController
-
     func makeUIViewController(context: Context) -> UIViewController {
         return UsersListViewController()
     }
@@ -19,6 +16,3 @@ struct MyUIKitView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
     }
 }
-
-
-

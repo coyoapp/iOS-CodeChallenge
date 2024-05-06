@@ -1,0 +1,9 @@
+xcuserdata/
+
+*.xcuserstate
+
+.idea
+.DS_Store
+.swiftpm
+
+DerivedData/

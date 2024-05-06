@@ -7,37 +7,36 @@
 
 import Foundation
 
-let apiUrl = "https://jsonplaceholder.typicode.com/"
-let session = URLSession.shared
+// TODO: Remove this file and create a proper NetworkClient
+// Resolve all forced unwrap cases, and handle errors properly
+
+private let apiUrl = "https://jsonplaceholder.typicode.com/"
+private let session = URLSession.shared
 
 
-struct User: Codable {
-    let id: Int
-    let name: String
-    let phone: String
-    let website: String
-}
 
-func performUsersListAPICall(endpointUrl: String) async throws -> [User] {
+func performUsersListAPICall(endpointUrl: String) async throws -> [UserDTO] {
     let (data, _) = try await URLSession.shared.data(from: URL(string: apiUrl + "/users")!)
-    let userList = try JSONDecoder().decode([User].self, from: data)
+    let userList = try JSONDecoder().decode([UserDTO].self, from: data)
     return userList
 }
 
-func performUserDetailAPICall(endpointUrl: String, id: String) async throws -> User {
+func performUserDetailAPICall(endpointUrl: String, id: String) async throws -> UserDTO {
     let (data, _) = try await URLSession.shared.data(from: URL(string: apiUrl + "/users/" + id)!)
-    let userList = try JSONDecoder().decode(User.self, from: data)
+    let userList = try JSONDecoder().decode(UserDTO.self, from: data)
     return userList
 }
 
-func getUsers(callback: @escaping ([User]) -> Void) {
-    Task {
-        let result = try await performUsersListAPICall(endpointUrl: "users")
-        callback(result)
+// TODO: Check what to return if the request fails
+func getUsers() async -> [UserDTO] {
+    do {
+        return try await performUsersListAPICall(endpointUrl: "users")
+    } catch {
+        return []
     }
 }
 
-func getUser(id: String) async -> User {
+func getUser(id: String) async -> UserDTO {
     return try! await performUserDetailAPICall(endpointUrl: "user/", id: id)
 }
 

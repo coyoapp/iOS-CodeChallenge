@@ -1,12 +1,12 @@
 import SwiftUI
 
-protocol ProfileViewProtocol: class {
-    func updateInfo(_ info: User)
+protocol ProfileViewProtocol: AnyObject {
+    func updateInfo(_ info: UserDTO)
     func getView() -> ProfileView
 }
 
+// TODO: Mix of presentation architectures here: MVVM and MVP and VIPER
 class ProfileViewHandler: ProfileViewProtocol {
-
     var presenter: ProfilePresenterProtocol!
     var view: ProfileView
 
@@ -18,13 +18,13 @@ class ProfileViewHandler: ProfileViewProtocol {
         return view
     }
 
-    func updateInfo(_ info: User) {
+    func updateInfo(_ info: UserDTO) {
         view.updateModel(newName: info.name, newPhone: info.phone, newWebsite: info.website)
     }
 }
 
+// TODO: This should belong to the ViewModel, and the unit tests should be for the VM instead
 func calculateUserHash(name: String, phone: String, website: String) -> String {
-
     let nameComponents = name.components(separatedBy: " ")
     var nameAbbreviation = ""
     for component in nameComponents {
@@ -47,6 +47,7 @@ func calculateUserHash(name: String, phone: String, website: String) -> String {
     return finalString
 }
 
+// TODO: The ViewModel is not being used as a ViewModel
 class ProfileViewModel: ObservableObject {
     @Published var name: String
     @Published var phone: String
@@ -62,7 +63,6 @@ class ProfileViewModel: ObservableObject {
 }
 
 struct ProfileView: View {
-
     @ObservedObject var viewModel: ProfileViewModel
 
     init(viewModel: ProfileViewModel = ProfileViewModel()) {
@@ -77,28 +77,31 @@ struct ProfileView: View {
     }
 
     var body: some View {
-        VStack {
-            Text(viewModel.name)
-                .font(.title)
-                .padding()
-            HStack {
-                Image(systemName: "phone")
-                    .imageScale(.large)
-                Text(viewModel.phone)
+        NavigationStack {
+            VStack {
+                Text(viewModel.name)
+                    .font(.title)
+                    .padding()
+                HStack {
+                    Image(systemName: "phone")
+                        .imageScale(.large)
+                    Text(viewModel.phone)
+                }
+                HStack {
+                    Image(systemName: "globe")
+                        .imageScale(.large)
+                    Text(viewModel.website)
+                }
+                Text("Customer ID: "+viewModel.user_hash)
+                Spacer()
             }
-            HStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                Text(viewModel.website)
-            }
-            Text("Customer ID: "+viewModel.user_hash)
-            Spacer()
-        }.navigationTitle("My profile")
+            .navigationTitle("My profile")
+        }
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
+#if DEBUG
+#Preview {
+    ProfileView()
 }
+#endif

@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ProfileInteractorProtocol: class {
+protocol ProfileInteractorProtocol: AnyObject {
     var presenter: ProfilePresenterProtocol! { get set }
 }
 

@@ -7,58 +7,71 @@
 
 import UIKit
 
-class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+// TODO: After an initial review of this class, is easier to migrate it to SwiftUI
 
-    struct viewUser {
+class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+    struct UserDisplay {
         let id: Int
         let name: String
     }
 
-    var data: [viewUser] = []
+    private var data: [UserDisplay] = []
 
-    let collectionView: UICollectionView = {
+    private let collectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
-
-    var onDataLoaded: (()->Void)?
-
-    func setOnDataLoaded(onDataLoadedHandler: @escaping ()->Void) {
-        onDataLoaded = onDataLoadedHandler
-    }
+    
+    private lazy var loadingView: UIView = {
+        let label = UILabel(frame: CGRect(x: 0, y: 200, width: 300, height: 50))
+        label.text = "Loading..."
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addSubview(collectionView)
-        collectionView.frame = view.frame
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
+            view.topAnchor.constraint(equalTo: collectionView.topAnchor),
+            view.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor)
+        ])
         collectionView.delegate = self
         collectionView.dataSource = self
-        fetchData()
 
-        let loadingView = loadingView()
         view.addSubview(loadingView)
-
-        self.onDataLoaded = {
-            self.collectionView.reloadData()
-            loadingView.isHidden = true
+        view.addConstraint(loadingView.topAnchor.constraint(equalTo: view.topAnchor))
+        
+        Task {
+            await fetchData()
         }
     }
-
-    func mapUsers(users: [User]) {
-        for (index, user) in users.enumerated() {
-            let viewUser = viewUser(id: user.id, name: user.name)
-            data.append(viewUser)
-        }
+    
+    private func fetchData() async {
+        let users = await getUsers()
+        
+        // Here we have resolved a bug in which if the `fetch` were performed several times,
+        // the app would have appended the same information without cleaning the state.
+        data = users.map { UserDisplay(id: $0.id, name: $0.name) }
+        
+        onDataLoaded()
+    }
+    
+    @MainActor
+    private func onDataLoaded() {
         collectionView.reloadData()
-        onDataLoaded!()
+        loadingView.isHidden = true
     }
 
-    func fetchData() {
-        getUsers(callback: mapUsers)
-    }
-
+    // MARK: - UICollectionViewDataSource
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -68,57 +81,51 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // Performance issue.
+        // The app is creating a new label every time it dequeues a cell, and puts this new label on top of the new one from the previous time (reuse).
+        // TODO: Create a subclass of UICollectionViewCell that has just a single text view in it.
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         cell.backgroundColor = .lightGray
         let label = UILabel(frame: cell.contentView.bounds)
         label.text = data[indexPath.item].name
         label.textAlignment = .center
         cell.contentView.addSubview(label)
-        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap(_:))))
+        
         return cell
     }
-
-    @objc func tap(_ sender: UITapGestureRecognizer) {
-        let row = self.collectionView.indexPathForItem(at: sender.location(in: self.collectionView))!.row
-        showUser(row)
+    
+    // MARK: - UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        showUser(indexPath.row)
+    }
+    
+    private func showUser(_ row: Int) {
+        let user = data[row]
+        Task {
+            let user2 = await getUser(id: String(user.id))
+            
+            await MainActor.run {
+                showUserModal(user: user2)
+            }
+        }
     }
 
+    private func showUserModal(user: UserDTO) {
+        view.addSubview(UserView(frame: view.frame, userName: user.name, userPhone: user.phone))
+    }
+
+    // MARK: - UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         let height: CGFloat = 90
         return CGSize(width: width, height: height)
     }
-
-    func loadingView() -> UIView {
-        let view = UIView(frame: view.frame)
-
-        let label = UILabel(frame: CGRect(x: 0, y: 200, width: 300, height: 50))
-        label.text = "Loading..."
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
-        view.addConstraint(label.topAnchor.constraint(equalTo: view.topAnchor))
-
-        return view
-    }
-
-    func showUser(_ row: Int) {
-        let user = data[row]
-        Task {
-            let user2 = await getUser(id: String(user.id))
-            showUserModal(user: user2)
-        }
-    }
-
-    func showUserModal(user: User) {
-        view.addSubview(userView(frame: view.frame, userName: user.name, userPhone: user.phone))
-    }
-
-    
 }
 
-class userView: UIView {
+class UserView: UIView {
 
     init(frame: CGRect, userName: String, userPhone: String) {
 

@@ -9,19 +9,19 @@ import Foundation
 
 func createProfileModule() -> ProfilePresenter {
 
-    let ProfileView = ProfileViewHandler()
-    let ProfileInteractor = ProfileInteractor()
-    let ProfilePresenter = ProfilePresenter()
-    let ProfileRouter = ProfileRouter()
+    let profileViewHandler = ProfileViewHandler()
+    let profileInteractor = ProfileInteractor()
+    let profilePresenter = ProfilePresenter()
+    let profileRouter = ProfileRouter()
 
-    ProfileView.presenter = ProfilePresenter
-    ProfilePresenter.view = ProfileView
-    ProfilePresenter.interactor = ProfileInteractor
-    ProfilePresenter.router = ProfileRouter
-    ProfileInteractor.presenter = ProfilePresenter
-    ProfileRouter.presenter = ProfilePresenter
+    profileViewHandler.presenter = profilePresenter
+    profilePresenter.view = profileViewHandler
+    profilePresenter.interactor = profileInteractor
+    profilePresenter.router = profileRouter
+    profileInteractor.presenter = profilePresenter
+    profileRouter.presenter = profilePresenter
 
-    ProfilePresenter.fetchInfo()
+    profilePresenter.fetchInfo()
 
-    return ProfilePresenter
+    return profilePresenter
 }

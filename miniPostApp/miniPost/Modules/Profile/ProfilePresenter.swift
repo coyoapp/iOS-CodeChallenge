@@ -1,18 +1,18 @@
 import Foundation
 import SwiftUI
 
-protocol ProfilePresenterProtocol: class {
+protocol ProfilePresenterProtocol: AnyObject {
     var view: ProfileViewProtocol! { get set }
     var interactor: ProfileInteractorProtocol! { get set }
 
     func fetchInfo()
-    func didFetchInfo(_ info: User)
+    func didFetchInfo(_ info: UserDTO)
     func getView() -> ProfileView
 }
 
 class ProfilePresenter: ProfilePresenterProtocol {
 
-    var view: ProfileViewProtocol!
+    weak var view: ProfileViewProtocol!
     var interactor: ProfileInteractorProtocol!
     var router: ProfileRouterProtocol!
 
@@ -28,7 +28,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
         router.fetchInfo()
     }
 
-    func didFetchInfo(_ info: User) {
+    func didFetchInfo(_ info: UserDTO) {
         view.updateInfo(info)
     }
 }

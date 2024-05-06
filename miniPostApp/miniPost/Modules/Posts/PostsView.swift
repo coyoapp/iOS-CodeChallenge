@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PostsView: View {
     @State private var posts: [Post] = []
-
+    
     var body: some View {
         VStack {
             if posts.isEmpty {
@@ -29,16 +29,18 @@ struct PostsView: View {
         }
         .onAppear(perform: fetchPosts)
     }
-
-    func fetchPosts() {
-
+    
+    private func fetchPosts() {
+        
         struct APIPost: Codable {
             let id: Int
             let title: String
             let body: String
             let userId: Int
         }
-
+        
+        // TODO: HIGH: Beware of the Task initiated from the DataTask
+        
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
@@ -50,7 +52,7 @@ struct PostsView: View {
                         })
                         for (index, post) in self.posts.enumerated() {
                             Task {
-                                let userInfo = await getUser(id: post.authorName)
+                                let userInfo = await getUser(id: post.authorName) // This call triggers another HTTP request
                                 self.posts[index].authorName = userInfo.name
                             }
                         }
