@@ -30,7 +30,7 @@ struct MainMenuView: View {
         switch item.name {
         case "Posts": AnyView(PostsViewFactory.make())
         case "Users": AnyView(UsersListView())
-        case "Profile": AnyView(AppModules.modules.profileModule?.getView())
+        case "Profile": AnyView(ProfileViewFactory.make())
         default: AnyView(PostsViewFactory.make())
         }
     }
