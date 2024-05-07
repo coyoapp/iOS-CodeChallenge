@@ -48,7 +48,7 @@ func calculateUserHash(name: String, phone: String, website: String) -> String {
 }
 
 // TODO: The ViewModel is not being used as a ViewModel
-class ProfileViewModel: ObservableObject {
+class ProfileViewModelLegacy: ObservableObject {
     @Published var name: String
     @Published var phone: String
     @Published var website: String
@@ -63,9 +63,9 @@ class ProfileViewModel: ObservableObject {
 }
 
 struct ProfileView: View {
-    @ObservedObject var viewModel: ProfileViewModel
+    @ObservedObject var viewModel: ProfileViewModelLegacy
 
-    init(viewModel: ProfileViewModel = ProfileViewModel()) {
+    init(viewModel: ProfileViewModelLegacy = ProfileViewModelLegacy()) {
         self.viewModel = viewModel
     }
 
