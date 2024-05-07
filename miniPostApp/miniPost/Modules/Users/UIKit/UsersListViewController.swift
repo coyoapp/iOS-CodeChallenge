@@ -14,7 +14,7 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
 
     private let collectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        cv.register(UsersCollectionCell.self, forCellWithReuseIdentifier: UsersCollectionCell.identifier)
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
@@ -76,16 +76,14 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // Performance issue.
-        // The app is creating a new label every time it dequeues a cell, and puts this new label on top of the new one from the previous time (reuse).
-        // TODO: Create a subclass of UICollectionViewCell that has just a single text view in it.
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: UsersCollectionCell.identifier,
+            for: indexPath
+        ) as? UsersCollectionCell else {
+            return UICollectionViewCell()
+        }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .lightGray
-        let label = UILabel(frame: cell.contentView.bounds)
-        label.text = data[indexPath.item].name
-        label.textAlignment = .center
-        cell.contentView.addSubview(label)
+        cell.configure(with: data[indexPath.row])
         
         return cell
     }

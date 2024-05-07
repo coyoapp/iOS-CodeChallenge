@@ -11,5 +11,6 @@ import SwiftUI
 struct UsersListView: View {
     var body: some View {
         MyUIKitView()
+            .navigationTitle("Users")
     }
 }

@@ -33,6 +33,7 @@
 		20E543602BEA893B00CD7E52 /* UsersRepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5435F2BEA893B00CD7E52 /* UsersRepositoryFactory.swift */; };
 		20E543642BEA8A5600CD7E52 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543632BEA8A5600CD7E52 /* ProfileViewModel.swift */; };
 		20E543662BEA8EB700CD7E52 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543652BEA8EB700CD7E52 /* ProfileView.swift */; };
+		20E543682BEABDFE00CD7E52 /* UsersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543672BEABDFE00CD7E52 /* UsersCollectionCell.swift */; };
 		9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */; };
 		9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */; };
 		9435B33D2BAC1D0400CF0C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435B33C2BAC1D0400CF0C9E /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		20E5435F2BEA893B00CD7E52 /* UsersRepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryFactory.swift; sourceTree = "<group>"; };
 		20E543632BEA8A5600CD7E52 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		20E543652BEA8EB700CD7E52 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		20E543672BEABDFE00CD7E52 /* UsersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionCell.swift; sourceTree = "<group>"; };
 		9435B3352BAC1D0200CF0C9E /* miniPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPostApp.swift; sourceTree = "<group>"; };
 		9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				9435B3722BAC2C6C00CF0C9E /* MyUIKitView.swift */,
 				9435B3702BAC2A6300CF0C9E /* UsersListViewController.swift */,
+				20E543672BEABDFE00CD7E52 /* UsersCollectionCell.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				20E543382BE97D7600CD7E52 /* PostDTO.swift in Sources */,
 				20E5431E2BE95FEA00CD7E52 /* MainMenuItem.swift in Sources */,
 				20E5434E2BE98C9200CD7E52 /* PostsViewFactory.swift in Sources */,
+				20E543682BEABDFE00CD7E52 /* UsersCollectionCell.swift in Sources */,
 				20E543212BE9614900CD7E52 /* UserDTO.swift in Sources */,
 				20E543192BE95E3A00CD7E52 /* UsersListView.swift in Sources */,
 				20E5435E2BEA87C700CD7E52 /* UserDTO+User.swift in Sources */,
