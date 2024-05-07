@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum ProfileViewFactory {
+//    static func make() -> ProfileView {
+//        
+//    }
+}

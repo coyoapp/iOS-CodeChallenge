@@ -25,6 +25,11 @@
 		20E5434C2BE989C300CD7E52 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5434B2BE989C300CD7E52 /* PostsViewModel.swift */; };
 		20E5434E2BE98C9200CD7E52 /* PostsViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5434D2BE98C9200CD7E52 /* PostsViewFactory.swift */; };
 		20E543502BE98D2100CD7E52 /* PostsRepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5434F2BE98D2100CD7E52 /* PostsRepositoryFactory.swift */; };
+		20E543542BEA79A900CD7E52 /* ProfileViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543532BEA79A900CD7E52 /* ProfileViewFactory.swift */; };
+		20E543572BEA864B00CD7E52 /* GetProfileInformationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543562BEA864B00CD7E52 /* GetProfileInformationUseCase.swift */; };
+		20E5435A2BEA869E00CD7E52 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543592BEA869E00CD7E52 /* UsersRepository.swift */; };
+		20E5435C2BEA86F100CD7E52 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5435B2BEA86F100CD7E52 /* User.swift */; };
+		20E5435E2BEA87C700CD7E52 /* UserDTO+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5435D2BEA87C700CD7E52 /* UserDTO+User.swift */; };
 		9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */; };
 		9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */; };
 		9435B33D2BAC1D0400CF0C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435B33C2BAC1D0400CF0C9E /* Assets.xcassets */; };
@@ -81,6 +86,11 @@
 		20E5434B2BE989C300CD7E52 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		20E5434D2BE98C9200CD7E52 /* PostsViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewFactory.swift; sourceTree = "<group>"; };
 		20E5434F2BE98D2100CD7E52 /* PostsRepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepositoryFactory.swift; sourceTree = "<group>"; };
+		20E543532BEA79A900CD7E52 /* ProfileViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewFactory.swift; sourceTree = "<group>"; };
+		20E543562BEA864B00CD7E52 /* GetProfileInformationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileInformationUseCase.swift; sourceTree = "<group>"; };
+		20E543592BEA869E00CD7E52 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		20E5435B2BEA86F100CD7E52 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		20E5435D2BEA87C700CD7E52 /* UserDTO+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDTO+User.swift"; sourceTree = "<group>"; };
 		9435B3352BAC1D0200CF0C9E /* miniPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPostApp.swift; sourceTree = "<group>"; };
 		9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -260,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				20E5433F2BE97EE100CD7E52 /* Posts */,
+				20E543552BEA861C00CD7E52 /* Profile */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -277,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				20E543512BE98F9600CD7E52 /* Posts */,
+				20E543582BEA868C00CD7E52 /* Users */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -285,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				20E543442BE97FC500CD7E52 /* PostDTO+Post.swift */,
+				20E5435D2BEA87C700CD7E52 /* UserDTO+User.swift */,
 			);
 			path = Converters;
 			sourceTree = "<group>";
@@ -293,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				20E5434A2BE989AD00CD7E52 /* Posts */,
+				20E543522BEA797800CD7E52 /* Profile */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -314,6 +328,31 @@
 				20E5434F2BE98D2100CD7E52 /* PostsRepositoryFactory.swift */,
 			);
 			path = Posts;
+			sourceTree = "<group>";
+		};
+		20E543522BEA797800CD7E52 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				20E543532BEA79A900CD7E52 /* ProfileViewFactory.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		20E543552BEA861C00CD7E52 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				20E543562BEA864B00CD7E52 /* GetProfileInformationUseCase.swift */,
+				20E5435B2BEA86F100CD7E52 /* User.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		20E543582BEA868C00CD7E52 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				20E543592BEA869E00CD7E52 /* UsersRepository.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		9435B32C2BAC1D0200CF0C9E = {
@@ -557,22 +596,27 @@
 				20E5433B2BE97DCC00CD7E52 /* PostsRequest.swift in Sources */,
 				20E5432A2BE9724000CD7E52 /* NetworkClient.swift in Sources */,
 				9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */,
+				20E5435C2BEA86F100CD7E52 /* User.swift in Sources */,
 				9435B3712BAC2A6300CF0C9E /* UsersListViewController.swift in Sources */,
 				20E543342BE97B3D00CD7E52 /* UsersRequest.swift in Sources */,
 				9435B3732BAC2C6C00CF0C9E /* MyUIKitView.swift in Sources */,
 				948652CE2BAD68B200D3B5E5 /* ProfileFactory.swift in Sources */,
+				20E543572BEA864B00CD7E52 /* GetProfileInformationUseCase.swift in Sources */,
 				9435B36C2BAC1D3200CF0C9E /* ProfilePresenter.swift in Sources */,
 				94C5DF602BAC64F300D2510C /* APIHandler.swift in Sources */,
 				20E543482BE988D500CD7E52 /* GetAllPostsUseCase.swift in Sources */,
 				20E5434C2BE989C300CD7E52 /* PostsViewModel.swift in Sources */,
+				20E5435A2BEA869E00CD7E52 /* UsersRepository.swift in Sources */,
 				9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */,
 				20E5433D2BE97E0400CD7E52 /* PostsDataSource.swift in Sources */,
+				20E543542BEA79A900CD7E52 /* ProfileViewFactory.swift in Sources */,
 				9435B36F2BAC1D3200CF0C9E /* ProfileEntity.swift in Sources */,
 				20E543382BE97D7600CD7E52 /* PostDTO.swift in Sources */,
 				20E5431E2BE95FEA00CD7E52 /* MainMenuItem.swift in Sources */,
 				20E5434E2BE98C9200CD7E52 /* PostsViewFactory.swift in Sources */,
 				20E543212BE9614900CD7E52 /* UserDTO.swift in Sources */,
 				20E543192BE95E3A00CD7E52 /* UsersListView.swift in Sources */,
+				20E5435E2BEA87C700CD7E52 /* UserDTO+User.swift in Sources */,
 				20E543292BE9724000CD7E52 /* NetworkRequest.swift in Sources */,
 				20E543322BE97AD700CD7E52 /* UserRequest.swift in Sources */,
 			);
