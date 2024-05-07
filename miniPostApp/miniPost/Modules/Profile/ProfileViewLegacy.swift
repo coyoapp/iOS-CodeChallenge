@@ -2,19 +2,19 @@ import SwiftUI
 
 protocol ProfileViewProtocol: AnyObject {
     func updateInfo(_ info: UserDTO)
-    func getView() -> ProfileView
+    func getView() -> ProfileViewLegacy
 }
 
 // TODO: Mix of presentation architectures here: MVVM and MVP and VIPER
 class ProfileViewHandler: ProfileViewProtocol {
     weak var presenter: ProfilePresenterProtocol!
-    var view: ProfileView
+    var view: ProfileViewLegacy
 
     init() {
-        view = ProfileView()
+        view = ProfileViewLegacy()
     }
 
-    func getView() -> ProfileView {
+    func getView() -> ProfileViewLegacy {
         return view
     }
 
@@ -62,7 +62,7 @@ class ProfileViewModelLegacy: ObservableObject {
     }
 }
 
-struct ProfileView: View {
+struct ProfileViewLegacy: View {
     @ObservedObject var viewModel: ProfileViewModelLegacy
 
     init(viewModel: ProfileViewModelLegacy = ProfileViewModelLegacy()) {
@@ -100,6 +100,6 @@ struct ProfileView: View {
 
 #if DEBUG
 #Preview {
-    ProfileView()
+    ProfileViewLegacy()
 }
 #endif

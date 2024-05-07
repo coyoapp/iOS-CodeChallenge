@@ -7,7 +7,7 @@ protocol ProfilePresenterProtocol: AnyObject {
 
     func fetchInfo()
     func didFetchInfo(_ info: UserDTO)
-    func getView() -> ProfileView
+    func getView() -> ProfileViewLegacy
 }
 
 class ProfilePresenter: ProfilePresenterProtocol {
@@ -16,7 +16,7 @@ class ProfilePresenter: ProfilePresenterProtocol {
     var interactor: ProfileInteractorProtocol!
     var router: ProfileRouterProtocol!
 
-    func getView() -> ProfileView {
+    func getView() -> ProfileViewLegacy {
         if let view = self.view {
             return view.getView()
         } else {

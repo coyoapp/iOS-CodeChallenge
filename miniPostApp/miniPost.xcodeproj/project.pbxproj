@@ -42,7 +42,7 @@
 		9435B36B2BAC1D3200CF0C9E /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3652BAC1D3200CF0C9E /* ProfileInteractor.swift */; };
 		9435B36C2BAC1D3200CF0C9E /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3662BAC1D3200CF0C9E /* ProfilePresenter.swift */; };
 		9435B36D2BAC1D3200CF0C9E /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3672BAC1D3200CF0C9E /* ProfileRouter.swift */; };
-		9435B36E2BAC1D3200CF0C9E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3682BAC1D3200CF0C9E /* ProfileView.swift */; };
+		9435B36E2BAC1D3200CF0C9E /* ProfileViewLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3682BAC1D3200CF0C9E /* ProfileViewLegacy.swift */; };
 		9435B36F2BAC1D3200CF0C9E /* ProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3692BAC1D3200CF0C9E /* ProfileEntity.swift */; };
 		9435B3712BAC2A6300CF0C9E /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3702BAC2A6300CF0C9E /* UsersListViewController.swift */; };
 		9435B3732BAC2C6C00CF0C9E /* MyUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3722BAC2C6C00CF0C9E /* MyUIKitView.swift */; };
@@ -108,7 +108,7 @@
 		9435B3652BAC1D3200CF0C9E /* ProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		9435B3662BAC1D3200CF0C9E /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		9435B3672BAC1D3200CF0C9E /* ProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
-		9435B3682BAC1D3200CF0C9E /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9435B3682BAC1D3200CF0C9E /* ProfileViewLegacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewLegacy.swift; sourceTree = "<group>"; };
 		9435B3692BAC1D3200CF0C9E /* ProfileEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEntity.swift; sourceTree = "<group>"; };
 		9435B3702BAC2A6300CF0C9E /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		9435B3722BAC2C6C00CF0C9E /* MyUIKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIKitView.swift; sourceTree = "<group>"; };
@@ -451,7 +451,7 @@
 				9435B3652BAC1D3200CF0C9E /* ProfileInteractor.swift */,
 				9435B3662BAC1D3200CF0C9E /* ProfilePresenter.swift */,
 				9435B3672BAC1D3200CF0C9E /* ProfileRouter.swift */,
-				9435B3682BAC1D3200CF0C9E /* ProfileView.swift */,
+				9435B3682BAC1D3200CF0C9E /* ProfileViewLegacy.swift */,
 				9435B3692BAC1D3200CF0C9E /* ProfileEntity.swift */,
 				948652CD2BAD68B200D3B5E5 /* ProfileFactory.swift */,
 			);
@@ -606,7 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E543452BE97FC500CD7E52 /* PostDTO+Post.swift in Sources */,
-				9435B36E2BAC1D3200CF0C9E /* ProfileView.swift in Sources */,
+				9435B36E2BAC1D3200CF0C9E /* ProfileViewLegacy.swift in Sources */,
 				9435B36B2BAC1D3200CF0C9E /* ProfileInteractor.swift in Sources */,
 				20E5432C2BE9724A00CD7E52 /* DataError.swift in Sources */,
 				948652D22BAD9DCD00D3B5E5 /* PostsView.swift in Sources */,
