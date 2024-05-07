@@ -8,7 +8,11 @@
 import Foundation
 
 enum ProfileViewFactory {
-//    static func make() -> ProfileView {
-//        
-//    }
+    static func make() -> ProfileView {
+        let usersRepository = UsersRepositoryFactory.make()
+        let getProfileUseCase = GetProfileInformationUseCaseImplementation(usersRepository: usersRepository)
+        let viewModel = ProfileViewModel(getProfileUseCase: getProfileUseCase)
+        
+        return ProfileView(viewModel: viewModel)
+    }
 }
