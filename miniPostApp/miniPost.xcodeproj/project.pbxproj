@@ -280,8 +280,8 @@
 		20E5433F2BE97EE100CD7E52 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				948652D32BAD9E3C00D3B5E5 /* Post.swift */,
 				20E543472BE988D500CD7E52 /* GetAllPostsUseCase.swift */,
+				20E543612BEA899C00CD7E52 /* Model */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				20E543562BEA864B00CD7E52 /* GetProfileInformationUseCase.swift */,
-				20E5435B2BEA86F100CD7E52 /* User.swift */,
+				20E543622BEA89B000CD7E52 /* Model */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -356,6 +356,22 @@
 				20E5435F2BEA893B00CD7E52 /* UsersRepositoryFactory.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		20E543612BEA899C00CD7E52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				948652D32BAD9E3C00D3B5E5 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20E543622BEA89B000CD7E52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20E5435B2BEA86F100CD7E52 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9435B32C2BAC1D0200CF0C9E = {
