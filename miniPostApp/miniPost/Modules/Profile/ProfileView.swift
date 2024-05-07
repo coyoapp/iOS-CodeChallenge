@@ -7,7 +7,7 @@ protocol ProfileViewProtocol: AnyObject {
 
 // TODO: Mix of presentation architectures here: MVVM and MVP and VIPER
 class ProfileViewHandler: ProfileViewProtocol {
-    var presenter: ProfilePresenterProtocol!
+    weak var presenter: ProfilePresenterProtocol!
     var view: ProfileView
 
     init() {
@@ -77,26 +77,24 @@ struct ProfileView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                Text(viewModel.name)
-                    .font(.title)
-                    .padding()
-                HStack {
-                    Image(systemName: "phone")
-                        .imageScale(.large)
-                    Text(viewModel.phone)
-                }
-                HStack {
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                    Text(viewModel.website)
-                }
-                Text("Customer ID: "+viewModel.user_hash)
-                Spacer()
+        VStack {
+            Text(viewModel.name)
+                .font(.title)
+                .padding()
+            HStack {
+                Image(systemName: "phone")
+                    .imageScale(.large)
+                Text(viewModel.phone)
             }
-            .navigationTitle("My profile")
+            HStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                Text(viewModel.website)
+            }
+            Text("Customer ID: "+viewModel.user_hash)
+            Spacer()
         }
+        .navigationTitle("My profile")
     }
 }
 

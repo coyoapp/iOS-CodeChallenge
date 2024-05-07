@@ -11,13 +11,15 @@ func createProfileModule() -> ProfilePresenter {
 
     let profileViewHandler = ProfileViewHandler()
     let profileInteractor = ProfileInteractor()
-    let profilePresenter = ProfilePresenter()
     let profileRouter = ProfileRouter()
+    let profilePresenter = ProfilePresenter()
 
-    profileViewHandler.presenter = profilePresenter
     profilePresenter.view = profileViewHandler
     profilePresenter.interactor = profileInteractor
     profilePresenter.router = profileRouter
+    
+    profileViewHandler.presenter = profilePresenter
+    
     profileInteractor.presenter = profilePresenter
     profileRouter.presenter = profilePresenter
 

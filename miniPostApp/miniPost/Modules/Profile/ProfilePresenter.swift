@@ -12,7 +12,7 @@ protocol ProfilePresenterProtocol: AnyObject {
 
 class ProfilePresenter: ProfilePresenterProtocol {
 
-    weak var view: ProfileViewProtocol!
+    var view: ProfileViewProtocol!
     var interactor: ProfileInteractorProtocol!
     var router: ProfileRouterProtocol!
 
