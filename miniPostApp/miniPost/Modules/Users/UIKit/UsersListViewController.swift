@@ -7,11 +7,12 @@
 
 import UIKit
 
-// TODO: After an initial review of this class, it's easier to migrate it to SwiftUI
+protocol UIUsersListView: AnyObject {
+    func didLoadData()
+}
 
 class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
-    private var data: [User] = []
-
+    
     private let collectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         cv.register(UsersCollectionCell.self, forCellWithReuseIdentifier: UsersCollectionCell.identifier)
@@ -27,9 +28,14 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         return label
     }()
+    
+    private let configurator: UsersConfigurator = .init()
+    var presenter: UsersPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configurator.configure(viewController: self)
 
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -45,18 +51,8 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
         view.addConstraint(loadingView.topAnchor.constraint(equalTo: view.topAnchor))
         
         Task {
-            await fetchData()
+            await presenter?.viewDidLoad()
         }
-    }
-    
-    private func fetchData() async {
-        let users = await getUsers()
-        
-        // Here we have resolved a bug in which if the `fetch` were performed several times,
-        // the app would have appended the same information without cleaning the state.
-        data = users.map { $0.toDomain }
-        
-        onDataLoaded()
     }
     
     @MainActor
@@ -72,18 +68,20 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return presenter?.users.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: UsersCollectionCell.identifier,
-            for: indexPath
-        ) as? UsersCollectionCell else {
+        guard let presenter,
+              indexPath.row < presenter.users.count,
+              let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: UsersCollectionCell.identifier,
+                for: indexPath
+              ) as? UsersCollectionCell else {
             return UICollectionViewCell()
         }
         
-        cell.configure(with: data[indexPath.row])
+        cell.configure(with: presenter.users[indexPath.row])
         
         return cell
     }
@@ -91,7 +89,9 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showUserModal(user: data[indexPath.row])
+        guard let presenter, indexPath.row < presenter.users.count else { return }
+        
+        showUserModal(user: presenter.users[indexPath.row])
     }
 
     private func showUserModal(user: User) {
@@ -148,5 +148,11 @@ class UserView: UIView {
 
     @objc func closeButtonTapped() {
         self.removeFromSuperview()
+    }
+}
+
+extension UsersListViewController: UIUsersListView {
+    func didLoadData() {
+        onDataLoaded()
     }
 }
