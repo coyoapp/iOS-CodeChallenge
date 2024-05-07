@@ -41,12 +41,16 @@
 		20E543762BEAD1D800CD7E52 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543752BEAD1D800CD7E52 /* UserTests.swift */; };
 		20E543792BEAD35900CD7E52 /* PostsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543782BEAD35900CD7E52 /* PostsViewModelTests.swift */; };
 		20E5437D2BEAD3D000CD7E52 /* GetAllPostsUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5437C2BEAD3D000CD7E52 /* GetAllPostsUseCaseMock.swift */; };
+		20E543812BEAD72300CD7E52 /* UIBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543802BEAD72300CD7E52 /* UIBaseTest.swift */; };
+		20E543832BEAD7C500CD7E52 /* BasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543822BEAD7C500CD7E52 /* BasePage.swift */; };
+		20E543852BEAD81A00CD7E52 /* MainMenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543842BEAD81A00CD7E52 /* MainMenuPage.swift */; };
+		20E543882BEAD9C300CD7E52 /* Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543872BEAD9C300CD7E52 /* Toolkit.swift */; };
+		20E5438A2BEADA9700CD7E52 /* PostsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543892BEADA9700CD7E52 /* PostsPage.swift */; };
+		20E5438C2BEADC4300CD7E52 /* UIPostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5438B2BEADC4300CD7E52 /* UIPostsTests.swift */; };
 		9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */; };
 		9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */; };
 		9435B33D2BAC1D0400CF0C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435B33C2BAC1D0400CF0C9E /* Assets.xcassets */; };
 		9435B3402BAC1D0400CF0C9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435B33F2BAC1D0400CF0C9E /* Preview Assets.xcassets */; };
-		9435B3542BAC1D0500CF0C9E /* miniPostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3532BAC1D0500CF0C9E /* miniPostUITests.swift */; };
-		9435B3562BAC1D0500CF0C9E /* miniPostUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3552BAC1D0500CF0C9E /* miniPostUITestsLaunchTests.swift */; };
 		9435B3712BAC2A6300CF0C9E /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3702BAC2A6300CF0C9E /* UsersListViewController.swift */; };
 		9435B3732BAC2C6C00CF0C9E /* MyUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3722BAC2C6C00CF0C9E /* MyUIKitView.swift */; };
 		948652D22BAD9DCD00D3B5E5 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948652D12BAD9DCD00D3B5E5 /* PostsView.swift */; };
@@ -105,6 +109,12 @@
 		20E543752BEAD1D800CD7E52 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		20E543782BEAD35900CD7E52 /* PostsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelTests.swift; sourceTree = "<group>"; };
 		20E5437C2BEAD3D000CD7E52 /* GetAllPostsUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsUseCaseMock.swift; sourceTree = "<group>"; };
+		20E543802BEAD72300CD7E52 /* UIBaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseTest.swift; sourceTree = "<group>"; };
+		20E543822BEAD7C500CD7E52 /* BasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePage.swift; sourceTree = "<group>"; };
+		20E543842BEAD81A00CD7E52 /* MainMenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPage.swift; sourceTree = "<group>"; };
+		20E543872BEAD9C300CD7E52 /* Toolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolkit.swift; sourceTree = "<group>"; };
+		20E543892BEADA9700CD7E52 /* PostsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPage.swift; sourceTree = "<group>"; };
+		20E5438B2BEADC4300CD7E52 /* UIPostsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPostsTests.swift; sourceTree = "<group>"; };
 		9435B3352BAC1D0200CF0C9E /* miniPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPostApp.swift; sourceTree = "<group>"; };
 		9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -112,8 +122,6 @@
 		9435B33F2BAC1D0400CF0C9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9435B3452BAC1D0500CF0C9E /* miniPostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miniPostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9435B34F2BAC1D0500CF0C9E /* miniPostUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = miniPostUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9435B3532BAC1D0500CF0C9E /* miniPostUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miniPostUITests.swift; sourceTree = "<group>"; };
-		9435B3552BAC1D0500CF0C9E /* miniPostUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miniPostUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9435B3702BAC2A6300CF0C9E /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		9435B3722BAC2C6C00CF0C9E /* MyUIKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUIKitView.swift; sourceTree = "<group>"; };
 		948652D12BAD9DCD00D3B5E5 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
@@ -441,6 +449,33 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		20E5437E2BEAD6F700CD7E52 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				20E543802BEAD72300CD7E52 /* UIBaseTest.swift */,
+				20E5438B2BEADC4300CD7E52 /* UIPostsTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		20E5437F2BEAD70300CD7E52 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				20E543822BEAD7C500CD7E52 /* BasePage.swift */,
+				20E543842BEAD81A00CD7E52 /* MainMenuPage.swift */,
+				20E543892BEADA9700CD7E52 /* PostsPage.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		20E543862BEAD9AF00CD7E52 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				20E543872BEAD9C300CD7E52 /* Toolkit.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		9435B32C2BAC1D0200CF0C9E = {
 			isa = PBXGroup;
 			children = (
@@ -493,8 +528,9 @@
 		9435B3522BAC1D0500CF0C9E /* miniPostUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9435B3532BAC1D0500CF0C9E /* miniPostUITests.swift */,
-				9435B3552BAC1D0500CF0C9E /* miniPostUITestsLaunchTests.swift */,
+				20E5437F2BEAD70300CD7E52 /* Pages */,
+				20E5437E2BEAD6F700CD7E52 /* Tests */,
+				20E543862BEAD9AF00CD7E52 /* Tools */,
 			);
 			path = miniPostUITests;
 			sourceTree = "<group>";
@@ -694,8 +730,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9435B3562BAC1D0500CF0C9E /* miniPostUITestsLaunchTests.swift in Sources */,
-				9435B3542BAC1D0500CF0C9E /* miniPostUITests.swift in Sources */,
+				20E543882BEAD9C300CD7E52 /* Toolkit.swift in Sources */,
+				20E543852BEAD81A00CD7E52 /* MainMenuPage.swift in Sources */,
+				20E543812BEAD72300CD7E52 /* UIBaseTest.swift in Sources */,
+				20E5438A2BEADA9700CD7E52 /* PostsPage.swift in Sources */,
+				20E543832BEAD7C500CD7E52 /* BasePage.swift in Sources */,
+				20E5438C2BEADC4300CD7E52 /* UIPostsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

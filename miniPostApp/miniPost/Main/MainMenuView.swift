@@ -19,6 +19,7 @@ struct MainMenuView: View {
                         Text(mainMenuItem.name)
                             .font(.title)
                             .padding()
+                            .accessibilityIdentifier(mainMenuItem.name)
                     }
                 }
             }
