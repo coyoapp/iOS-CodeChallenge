@@ -37,6 +37,7 @@
 		20E5436A2BEAC41C00CD7E52 /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543692BEAC41C00CD7E52 /* UsersPresenter.swift */; };
 		20E5436D2BEAC4F000CD7E52 /* GetAllUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5436C2BEAC4F000CD7E52 /* GetAllUsersUseCase.swift */; };
 		20E5436F2BEAC7B500CD7E52 /* UsersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5436E2BEAC7B500CD7E52 /* UsersConfigurator.swift */; };
+		20E543712BEACA5100CD7E52 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543702BEACA5100CD7E52 /* UserView.swift */; };
 		9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */; };
 		9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */; };
 		9435B33D2BAC1D0400CF0C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435B33C2BAC1D0400CF0C9E /* Assets.xcassets */; };
@@ -99,6 +100,7 @@
 		20E543692BEAC41C00CD7E52 /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		20E5436C2BEAC4F000CD7E52 /* GetAllUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllUsersUseCase.swift; sourceTree = "<group>"; };
 		20E5436E2BEAC7B500CD7E52 /* UsersConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersConfigurator.swift; sourceTree = "<group>"; };
+		20E543702BEACA5100CD7E52 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		9435B3352BAC1D0200CF0C9E /* miniPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPostApp.swift; sourceTree = "<group>"; };
 		9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -153,8 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				9435B3722BAC2C6C00CF0C9E /* MyUIKitView.swift */,
-				9435B3702BAC2A6300CF0C9E /* UsersListViewController.swift */,
 				20E543672BEABDFE00CD7E52 /* UsersCollectionCell.swift */,
+				9435B3702BAC2A6300CF0C9E /* UsersListViewController.swift */,
+				20E543702BEACA5100CD7E52 /* UserView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				20E543452BE97FC500CD7E52 /* PostDTO+Post.swift in Sources */,
 				20E543662BEA8EB700CD7E52 /* ProfileView.swift in Sources */,
 				20E5432C2BE9724A00CD7E52 /* DataError.swift in Sources */,
+				20E543712BEACA5100CD7E52 /* UserView.swift in Sources */,
 				948652D22BAD9DCD00D3B5E5 /* PostsView.swift in Sources */,
 				20E543602BEA893B00CD7E52 /* UsersRepositoryFactory.swift in Sources */,
 				20E543422BE97F1F00CD7E52 /* PostsRepository.swift in Sources */,
