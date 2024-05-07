@@ -14,8 +14,9 @@ class ProfileViewModel {
         let name: String
         let phone: String
         let website: String
+        let userHash: String
         
-        static let any: UserDisplay = .init(name: "", phone: "", website: "")
+        static let any: UserDisplay = .init(name: "", phone: "", website: "", userHash: "")
     }
     
     var userDisplay: UserDisplay = .any
@@ -29,8 +30,15 @@ class ProfileViewModel {
     func fetchInfo() async {
         let userId = "4"
         if let user = try? await getProfileUseCase(userId: userId) {
+            let userHash = user.calculateUserHash()
+            
             await MainActor.run {
-                userDisplay = .init(name: user.name, phone: user.phone, website: user.website)
+                userDisplay = .init(
+                    name: user.name,
+                    phone: user.phone,
+                    website: user.website,
+                    userHash: userHash
+                )
             }
         }
     }
