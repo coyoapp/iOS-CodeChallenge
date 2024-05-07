@@ -10,12 +10,7 @@ import UIKit
 // TODO: After an initial review of this class, it's easier to migrate it to SwiftUI
 
 class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
-    struct UserDisplay {
-        let id: Int
-        let name: String
-    }
-
-    private var data: [UserDisplay] = []
+    private var data: [User] = []
 
     private let collectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -59,7 +54,7 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         // Here we have resolved a bug in which if the `fetch` were performed several times,
         // the app would have appended the same information without cleaning the state.
-        data = users.map { UserDisplay(id: $0.id, name: $0.name) }
+        data = users.map { $0.toDomain }
         
         onDataLoaded()
     }
@@ -98,21 +93,10 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showUser(indexPath.row)
-    }
-    
-    private func showUser(_ row: Int) {
-        let user = data[row]
-        Task {
-            let user2 = await getUser(id: String(user.id))
-            
-            await MainActor.run {
-                showUserModal(user: user2)
-            }
-        }
+        showUserModal(user: data[indexPath.row])
     }
 
-    private func showUserModal(user: UserDTO) {
+    private func showUserModal(user: User) {
         view.addSubview(UserView(frame: view.frame, userName: user.name, userPhone: user.phone))
     }
 
@@ -126,9 +110,7 @@ class UsersListViewController: UIViewController, UICollectionViewDelegateFlowLay
 }
 
 class UserView: UIView {
-
     init(frame: CGRect, userName: String, userPhone: String) {
-
         super.init(frame: frame)
         self.backgroundColor = .white
 
@@ -141,7 +123,6 @@ class UserView: UIView {
             userNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20)
         ])
 
-
         let userPhoneLabel = UILabel()
         userPhoneLabel.text = userPhone
         self.addSubview(userPhoneLabel)
@@ -150,9 +131,7 @@ class UserView: UIView {
             userPhoneLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             userPhoneLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
-
-
-
+        
         let closeButton = UIButton(type: .custom)
         closeButton.setTitle("Close", for: .normal)
         closeButton.setTitleColor(.blue, for: .normal)
