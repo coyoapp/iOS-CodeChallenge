@@ -22,3 +22,11 @@ struct GetProfileInformationUseCaseImplementation: GetProfileInformationUseCase 
         try await usersRepository.getProfile(for: userId)
     }
 }
+
+#if DEBUG
+struct GetProfileInformationUseCasePreviewMock: GetProfileInformationUseCase {
+    func callAsFunction(userId: String) async throws -> User {
+        .init(id: 4, name: "John", phone: "55 555 555 555", website: "http://johndoe.com")
+    }
+}
+#endif
