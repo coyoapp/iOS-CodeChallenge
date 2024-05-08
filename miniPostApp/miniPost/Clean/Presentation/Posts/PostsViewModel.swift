@@ -10,7 +10,7 @@ import SwiftUI
 
 @Observable
 class PostsViewModel {
-    var posts: [PostDisplay] = []
+    var state: ViewModelState<[PostDisplay]> = .idle
     
     private let getAllPostsUseCase: GetAllPostsUseCase
     
@@ -19,11 +19,15 @@ class PostsViewModel {
     }
     
     func onAppear() async {
+        withAnimation {
+            state = .loading
+        }
+        
         let posts = await getAllPostsUseCase()
         
         await MainActor.run {
             withAnimation {
-                self.posts = posts.map { $0.toDisplay }
+                state = .loaded(posts.map { $0.toDisplay })
             }
         }
     }

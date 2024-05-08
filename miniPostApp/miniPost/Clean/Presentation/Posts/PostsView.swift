@@ -11,25 +11,21 @@ struct PostsView: View {
     @State var viewModel: PostsViewModel
     
     var body: some View {
-        VStack {
-            if viewModel.posts.isEmpty {
-                Text("Loading posts...")
-                    .accessibilityIdentifier("loading")
-            } else {
-                ScrollView {
-                    LazyVStack(spacing: 20) {
-                        ForEach(viewModel.posts) { post in
-                            PostRowView(post: post)
-                                .scrollTransition { effect, phase in
-                                    effect
-                                        .scaleEffect(phase.isIdentity ? 1 : 0.85)
-                                }
-                        }
+        ScrollView {
+            LazyVStack(spacing: 20) {
+                if case let .loaded(posts) = viewModel.state {
+                    ForEach(posts) { post in
+                        PostRowView(post: post)
+                            .scrollTransition { effect, phase in
+                                effect
+                                    .scaleEffect(phase.isIdentity ? 1 : 0.85)
+                            }
                     }
-                    .padding()
                 }
             }
+            .padding()
         }
+        .loadingState(viewModel.state)
         .navigationTitle("Posts")
         .task {
             await viewModel.onAppear()

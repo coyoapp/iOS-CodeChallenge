@@ -50,6 +50,8 @@
 		20E5438E2BEAE0ED00CD7E52 /* PostRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5438D2BEAE0ED00CD7E52 /* PostRowView.swift */; };
 		20E543902BEB581B00CD7E52 /* Post+PostDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5438F2BEB581B00CD7E52 /* Post+PostDisplay.swift */; };
 		20E543922BEB5B1600CD7E52 /* PostDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543912BEB5B1600CD7E52 /* PostDisplay.swift */; };
+		20E543962BEBDC9300CD7E52 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543952BEBDC9300CD7E52 /* ViewModelState.swift */; };
+		20E543982BEBDCB800CD7E52 /* View+LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543972BEBDCB800CD7E52 /* View+LoadingState.swift */; };
 		9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */; };
 		9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */; };
 		9435B33D2BAC1D0400CF0C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435B33C2BAC1D0400CF0C9E /* Assets.xcassets */; };
@@ -121,6 +123,8 @@
 		20E5438D2BEAE0ED00CD7E52 /* PostRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowView.swift; sourceTree = "<group>"; };
 		20E5438F2BEB581B00CD7E52 /* Post+PostDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+PostDisplay.swift"; sourceTree = "<group>"; };
 		20E543912BEB5B1600CD7E52 /* PostDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDisplay.swift; sourceTree = "<group>"; };
+		20E543952BEBDC9300CD7E52 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
+		20E543972BEBDCB800CD7E52 /* View+LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+LoadingState.swift"; sourceTree = "<group>"; };
 		9435B3352BAC1D0200CF0C9E /* miniPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPostApp.swift; sourceTree = "<group>"; };
 		9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -328,6 +332,7 @@
 		20E543492BE9899F00CD7E52 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				20E543942BEBDC7F00CD7E52 /* Base */,
 				20E5434A2BE989AD00CD7E52 /* Posts */,
 				20E543522BEA797800CD7E52 /* Profile */,
 				948652CF2BAD9D8100D3B5E5 /* Users */,
@@ -491,6 +496,15 @@
 				20E543912BEB5B1600CD7E52 /* PostDisplay.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		20E543942BEBDC7F00CD7E52 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				20E543952BEBDC9300CD7E52 /* ViewModelState.swift */,
+				20E543972BEBDCB800CD7E52 /* View+LoadingState.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		9435B32C2BAC1D0200CF0C9E = {
@@ -696,10 +710,12 @@
 				20E543452BE97FC500CD7E52 /* PostDTO+Post.swift in Sources */,
 				20E543662BEA8EB700CD7E52 /* ProfileView.swift in Sources */,
 				20E5432C2BE9724A00CD7E52 /* DataError.swift in Sources */,
+				20E543982BEBDCB800CD7E52 /* View+LoadingState.swift in Sources */,
 				20E543712BEACA5100CD7E52 /* UserView.swift in Sources */,
 				948652D22BAD9DCD00D3B5E5 /* PostsView.swift in Sources */,
 				20E5438E2BEAE0ED00CD7E52 /* PostRowView.swift in Sources */,
 				20E543602BEA893B00CD7E52 /* UsersRepositoryFactory.swift in Sources */,
+				20E543962BEBDC9300CD7E52 /* ViewModelState.swift in Sources */,
 				20E543422BE97F1F00CD7E52 /* PostsRepository.swift in Sources */,
 				20E543922BEB5B1600CD7E52 /* PostDisplay.swift in Sources */,
 				20E5432F2BE9734100CD7E52 /* UsersDataSource.swift in Sources */,
