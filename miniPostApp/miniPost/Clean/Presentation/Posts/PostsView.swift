@@ -16,31 +16,24 @@ struct PostsView: View {
                 Text("Loading posts...")
                     .accessibilityIdentifier("loading")
             } else {
-                List(viewModel.posts, id: \.id) { post in
-                    PostsListRow(post: post)
+                ScrollView {
+                    LazyVStack(spacing: 20) {
+                        ForEach(viewModel.posts) { post in
+                            PostRowView(post: post)
+                                .scrollTransition { effect, phase in
+                                    effect
+                                        .scaleEffect(phase.isIdentity ? 1 : 0.85)
+                                }
+                        }
+                    }
+                    .padding()
                 }
             }
         }
+        .navigationTitle("Posts")
         .task {
             await viewModel.onAppear()
         }
-    }
-}
-
-struct PostsListRow: View {
-    let post: Post
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(post.title)
-                .font(.headline)
-            Text("By "+post.authorName)
-                .font(.subheadline)
-            Text(post.body)
-                .font(.body)
-        }
-        .accessibilityElement(children: .contain)
-        .accessibilityIdentifier("post")
     }
 }
 

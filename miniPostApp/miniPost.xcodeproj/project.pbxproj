@@ -47,6 +47,9 @@
 		20E543882BEAD9C300CD7E52 /* Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543872BEAD9C300CD7E52 /* Toolkit.swift */; };
 		20E5438A2BEADA9700CD7E52 /* PostsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543892BEADA9700CD7E52 /* PostsPage.swift */; };
 		20E5438C2BEADC4300CD7E52 /* UIPostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5438B2BEADC4300CD7E52 /* UIPostsTests.swift */; };
+		20E5438E2BEAE0ED00CD7E52 /* PostRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5438D2BEAE0ED00CD7E52 /* PostRowView.swift */; };
+		20E543902BEB581B00CD7E52 /* Post+PostDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5438F2BEB581B00CD7E52 /* Post+PostDisplay.swift */; };
+		20E543922BEB5B1600CD7E52 /* PostDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543912BEB5B1600CD7E52 /* PostDisplay.swift */; };
 		9435B3392BAC1D0200CF0C9E /* MiniPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */; };
 		9435B33B2BAC1D0200CF0C9E /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */; };
 		9435B33D2BAC1D0400CF0C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435B33C2BAC1D0400CF0C9E /* Assets.xcassets */; };
@@ -115,6 +118,9 @@
 		20E543872BEAD9C300CD7E52 /* Toolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolkit.swift; sourceTree = "<group>"; };
 		20E543892BEADA9700CD7E52 /* PostsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPage.swift; sourceTree = "<group>"; };
 		20E5438B2BEADC4300CD7E52 /* UIPostsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPostsTests.swift; sourceTree = "<group>"; };
+		20E5438D2BEAE0ED00CD7E52 /* PostRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowView.swift; sourceTree = "<group>"; };
+		20E5438F2BEB581B00CD7E52 /* Post+PostDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+PostDisplay.swift"; sourceTree = "<group>"; };
+		20E543912BEB5B1600CD7E52 /* PostDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDisplay.swift; sourceTree = "<group>"; };
 		9435B3352BAC1D0200CF0C9E /* miniPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miniPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9435B3382BAC1D0200CF0C9E /* MiniPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPostApp.swift; sourceTree = "<group>"; };
 		9435B33A2BAC1D0200CF0C9E /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -332,9 +338,11 @@
 		20E5434A2BE989AD00CD7E52 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				20E5438D2BEAE0ED00CD7E52 /* PostRowView.swift */,
 				948652D12BAD9DCD00D3B5E5 /* PostsView.swift */,
 				20E5434D2BE98C9200CD7E52 /* PostsViewFactory.swift */,
 				20E5434B2BE989C300CD7E52 /* PostsViewModel.swift */,
+				20E543932BEB5B2700CD7E52 /* Model */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -474,6 +482,15 @@
 				20E543872BEAD9C300CD7E52 /* Toolkit.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		20E543932BEB5B2700CD7E52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20E5438F2BEB581B00CD7E52 /* Post+PostDisplay.swift */,
+				20E543912BEB5B1600CD7E52 /* PostDisplay.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9435B32C2BAC1D0200CF0C9E = {
@@ -681,10 +698,13 @@
 				20E5432C2BE9724A00CD7E52 /* DataError.swift in Sources */,
 				20E543712BEACA5100CD7E52 /* UserView.swift in Sources */,
 				948652D22BAD9DCD00D3B5E5 /* PostsView.swift in Sources */,
+				20E5438E2BEAE0ED00CD7E52 /* PostRowView.swift in Sources */,
 				20E543602BEA893B00CD7E52 /* UsersRepositoryFactory.swift in Sources */,
 				20E543422BE97F1F00CD7E52 /* PostsRepository.swift in Sources */,
+				20E543922BEB5B1600CD7E52 /* PostDisplay.swift in Sources */,
 				20E5432F2BE9734100CD7E52 /* UsersDataSource.swift in Sources */,
 				20E5436D2BEAC4F000CD7E52 /* GetAllUsersUseCase.swift in Sources */,
+				20E543902BEB581B00CD7E52 /* Post+PostDisplay.swift in Sources */,
 				20E543502BE98D2100CD7E52 /* PostsRepositoryFactory.swift in Sources */,
 				948652D42BAD9E3C00D3B5E5 /* Post.swift in Sources */,
 				20E5433B2BE97DCC00CD7E52 /* PostsRequest.swift in Sources */,
