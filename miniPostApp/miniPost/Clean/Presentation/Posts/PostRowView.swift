@@ -22,13 +22,17 @@ struct PostRowView: View {
                 Text("by " + post.authorName)
                     .font(.footnote)
             }
+            .padding()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.gray.opacity(0.4))
             
             Text(post.body.capitalizedSentence)
                 .font(.callout)
                 .multilineTextAlignment(.leading)
+                .padding(.horizontal)
+                .padding(.bottom)
         }
         .fontDesign(.serif)
-        .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius))
