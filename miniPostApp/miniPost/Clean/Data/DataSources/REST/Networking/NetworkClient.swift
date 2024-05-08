@@ -8,6 +8,7 @@ struct ApiClient: NetworkClient {
     private let session: URLSession
     
     init(session: URLSession = .shared) {
+        session.configuration.timeoutIntervalForResource = 10
         self.session = session
     }
     
