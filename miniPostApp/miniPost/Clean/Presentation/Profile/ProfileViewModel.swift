@@ -19,7 +19,7 @@ class ProfileViewModel {
         static let any: UserDisplay = .init(name: "", phone: "", website: "", userHash: "")
     }
     
-    var userDisplay: UserDisplay = .any
+    var state: ViewModelState<UserDisplay> = .idle
     
     private let getProfileUseCase: GetProfileInformationUseCase
     
@@ -28,17 +28,30 @@ class ProfileViewModel {
     }
     
     func fetchInfo() async {
-        let userId = "4"
-        if let user = try? await getProfileUseCase(userId: userId) {
-            let userHash = user.calculateUserHash()
+        withAnimation {
+            state = .loading
+        }
+        
+        do {
+            let userId = "4"
+            let user = try await getProfileUseCase(userId: userId)
+            let userDisplay: UserDisplay = .init(
+                name: user.name,
+                phone: user.phone,
+                website: user.website,
+                userHash: user.calculateUserHash()
+            )
             
             await MainActor.run {
-                userDisplay = .init(
-                    name: user.name,
-                    phone: user.phone,
-                    website: user.website,
-                    userHash: userHash
-                )
+                withAnimation {
+                    state = .loaded(userDisplay)
+                }
+            }
+        } catch {
+            await MainActor.run {
+                withAnimation {
+                    state = .failed(error)
+                }
             }
         }
     }
