@@ -24,19 +24,25 @@ struct PostsRepositoryImplementation: PostsRepository {
         guard let postsDTO = try? await postsDataSource.getPosts() else { return [] }
         
         let usersDictionary = try await withThrowingTaskGroup(
-            of: (Int, UserDTO).self,
+            of: (Int, UserDTO)?.self,
             returning: [Int: UserDTO].self
         ) { group in
             for dto in postsDTO {
                 group.addTask {
-                    let userDTO = try await usersDataSource.getUser(id: String(dto.userId))
-                    return (dto.userId, userDTO)
+                    do {
+                        let userDTO = try await usersDataSource.getUser(id: String(dto.userId))
+                        return (dto.userId, userDTO)
+                    } catch {
+                        return nil
+                    }
                 }
             }
             
-            return try await group.reduce(into: [:]) { partialResult, taskResult in
-                partialResult[taskResult.0] = taskResult.1
-            }
+            return try await group
+                .compactMap { $0 }
+                .reduce(into: [:]) { partialResult, taskResult in
+                    partialResult[taskResult.0] = taskResult.1
+                }
         }
         
         return postsDTO.compactMap {
