@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2069827E2BED8DE200035678 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069827D2BED8DE200035678 /* ProfilePage.swift */; };
+		206982812BED8EE200035678 /* TabBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206982802BED8EE200035678 /* TabBarComponent.swift */; };
 		20E543192BE95E3A00CD7E52 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543182BE95E3A00CD7E52 /* UsersListView.swift */; };
 		20E5431E2BE95FEA00CD7E52 /* MainMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5431D2BE95FEA00CD7E52 /* MainMenuItem.swift */; };
 		20E543212BE9614900CD7E52 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543202BE9614900CD7E52 /* UserDTO.swift */; };
@@ -43,7 +45,6 @@
 		20E5437D2BEAD3D000CD7E52 /* GetAllPostsUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5437C2BEAD3D000CD7E52 /* GetAllPostsUseCaseMock.swift */; };
 		20E543812BEAD72300CD7E52 /* UIBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543802BEAD72300CD7E52 /* UIBaseTest.swift */; };
 		20E543832BEAD7C500CD7E52 /* BasePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543822BEAD7C500CD7E52 /* BasePage.swift */; };
-		20E543852BEAD81A00CD7E52 /* MainMenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543842BEAD81A00CD7E52 /* MainMenuPage.swift */; };
 		20E543882BEAD9C300CD7E52 /* Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543872BEAD9C300CD7E52 /* Toolkit.swift */; };
 		20E5438A2BEADA9700CD7E52 /* PostsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E543892BEADA9700CD7E52 /* PostsPage.swift */; };
 		20E5438C2BEADC4300CD7E52 /* UIPostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E5438B2BEADC4300CD7E52 /* UIPostsTests.swift */; };
@@ -82,6 +83,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2069827D2BED8DE200035678 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		206982802BED8EE200035678 /* TabBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarComponent.swift; sourceTree = "<group>"; };
 		20E543182BE95E3A00CD7E52 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		20E5431D2BE95FEA00CD7E52 /* MainMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuItem.swift; sourceTree = "<group>"; };
 		20E543202BE9614900CD7E52 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
@@ -118,7 +121,6 @@
 		20E5437C2BEAD3D000CD7E52 /* GetAllPostsUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllPostsUseCaseMock.swift; sourceTree = "<group>"; };
 		20E543802BEAD72300CD7E52 /* UIBaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseTest.swift; sourceTree = "<group>"; };
 		20E543822BEAD7C500CD7E52 /* BasePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePage.swift; sourceTree = "<group>"; };
-		20E543842BEAD81A00CD7E52 /* MainMenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuPage.swift; sourceTree = "<group>"; };
 		20E543872BEAD9C300CD7E52 /* Toolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolkit.swift; sourceTree = "<group>"; };
 		20E543892BEADA9700CD7E52 /* PostsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPage.swift; sourceTree = "<group>"; };
 		20E5438B2BEADC4300CD7E52 /* UIPostsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPostsTests.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2069827F2BED8ED000035678 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				206982802BED8EE200035678 /* TabBarComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		20E5431A2BE95E8500CD7E52 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,8 +490,8 @@
 			isa = PBXGroup;
 			children = (
 				20E543822BEAD7C500CD7E52 /* BasePage.swift */,
-				20E543842BEAD81A00CD7E52 /* MainMenuPage.swift */,
 				20E543892BEADA9700CD7E52 /* PostsPage.swift */,
+				2069827D2BED8DE200035678 /* ProfilePage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -573,6 +583,7 @@
 		9435B3522BAC1D0500CF0C9E /* miniPostUITests */ = {
 			isa = PBXGroup;
 			children = (
+				2069827F2BED8ED000035678 /* Components */,
 				20E5437F2BEAD70300CD7E52 /* Pages */,
 				20E5437E2BEAD6F700CD7E52 /* Tests */,
 				20E543862BEAD9AF00CD7E52 /* Tools */,
@@ -783,11 +794,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E543882BEAD9C300CD7E52 /* Toolkit.swift in Sources */,
-				20E543852BEAD81A00CD7E52 /* MainMenuPage.swift in Sources */,
 				20E543812BEAD72300CD7E52 /* UIBaseTest.swift in Sources */,
+				2069827E2BED8DE200035678 /* ProfilePage.swift in Sources */,
 				20E5438A2BEADA9700CD7E52 /* PostsPage.swift in Sources */,
 				20E543832BEAD7C500CD7E52 /* BasePage.swift in Sources */,
 				20E5438C2BEADC4300CD7E52 /* UIPostsTests.swift in Sources */,
+				206982812BED8EE200035678 /* TabBarComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

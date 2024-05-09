@@ -17,7 +17,6 @@ struct ProfileView: View {
                 if case let .loaded(userDisplay) = viewModel.state {
                     VStack {
                         ProfileCardView(userDisplay: userDisplay)
-                        Spacer()
                     }
                     .navigationTitle(userDisplay.name)
                 }

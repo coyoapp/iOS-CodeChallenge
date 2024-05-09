@@ -27,7 +27,12 @@ final class PostsViewModelTests: XCTestCase {
         await sut.onAppear()
         
         XCTAssertEqual(1, getAllPostsUseCaseMock.callAsFunctionCallsCount)
-        XCTAssertEqual(1, sut.posts.count)
-        XCTAssertEqual("John", sut.posts[0].authorName)
+        
+        guard case let .loaded(posts) = sut.state else {
+            XCTFail("Shouldn't go this way")
+            return
+        }
+        XCTAssertEqual(1, posts.count)
+        XCTAssertEqual("John", posts[0].authorName)
     }
 }

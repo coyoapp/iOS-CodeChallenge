@@ -8,9 +8,12 @@
 import XCTest
 
 final class UIPostsTests: UIBaseTest {
-    func testThatPostsArePresented() {
+    func testThatUserCanSwitchToProfileTab() {
         _ = start()
-            .checkThatTheThreeSectionsAppear()
+            .checkThatTheThreeTabsAppear()
+            .checkThatPostsAppear()
+            .tapOnProfile()
+            .checkThatProfileLoads()
             .tapOnPosts()
             .checkThatPostsAppear()
     }

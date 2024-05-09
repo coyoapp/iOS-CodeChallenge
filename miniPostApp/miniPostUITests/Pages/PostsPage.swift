@@ -8,7 +8,7 @@
 import Foundation
 import XCTest
 
-final class PostsPage: BasePage {
+final class PostsPage: BasePage, TabBarComponent {
     private enum Posts: String {
         case post
         

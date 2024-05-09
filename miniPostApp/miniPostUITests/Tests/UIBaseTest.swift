@@ -16,8 +16,8 @@ class UIBaseTest: XCTestCase {
         continueAfterFailure = false
     }
     
-    func start() -> MainMenuPage {
+    func start() -> PostsPage {
         app.launch()
-        return MainMenuPage(app: app)
+        return PostsPage(app: app)
     }
 }

@@ -14,8 +14,16 @@ struct ProfileCardView: View {
         HStack(spacing: 25) {
             VStack(alignment: .leading) {
                 ProfileInfoRow(iconName: "phone", text: userDisplay.phone)
+                    .accessibilityElement(children: .contain)
+                    .accessibilityIdentifier("phone")
+                
                 ProfileInfoRow(iconName: "globe", text: userDisplay.website)
+                    .accessibilityElement(children: .contain)
+                    .accessibilityIdentifier("website")
+                
                 ProfileInfoRow(iconName: "person.text.rectangle", text: userDisplay.userHash)
+                    .accessibilityElement(children: .contain)
+                    .accessibilityIdentifier("userHash")
             }
             
             Spacer()
@@ -25,6 +33,7 @@ struct ProfileCardView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 90)
                 .foregroundStyle(.gray.gradient)
+                .accessibilityIdentifier("profilePicture")
         }
     }
 }
